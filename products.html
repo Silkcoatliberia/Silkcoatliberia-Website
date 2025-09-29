@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Silkcoat | Liberia</title>
+    <meta name="description" content="Explore Silkcoat's comprehensive range of premium paints, primers, and specialty coatings for interior and exterior applications in Liberia.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="public/images/silkcoat_logo.png" alt="Silkcoat" class="logo-img">
+                <span class="brand-text"><span class="location">|LIBERIA</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="interiorPaintDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Interior Paint
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="products.html?category=decorative-paint" data-category="decorative-paint">Decorative Paint</a></li>
+                                    <li><a class="dropdown-item" href="products.html?category=plastic-paint" data-category="plastic-paint">Plastic Paint</a></li>
+                                    <li><a class="dropdown-item" href="products.html?category=latex-paint" data-category="latex-paint">Latex Paint</a></li>
+                                    <li><a class="dropdown-item" href="products.html?category=acrylic-paint" data-category="acrylic-paint">Acrylic Paint</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="products.html?category=exterior-paint" data-category="exterior-paint">Exterior Paint</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=floor-paint" data-category="floor-paint">Floor Paint</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=car-paint" data-category="car-paint">Car Paint</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="services.html?category=color-chart" data-category="color-chart">Color Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link inventory-link" href="http://127.0.0.1:5000" id="inventoryLink">
+                            <i class="fas fa-boxes"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Category Grid View -->
+        <section id="categoryGridView" class="category-grid-view">
+            <div class="container">
+                <div class="category-header text-center mb-5">
+                    <h1 id="categoryTitle" class="category-title">Select a Product Category</h1>
+                    <p class="category-subtitle">Choose from our premium paint collections</p>
+                </div>
+                
+                <!-- Product Category Items Grid -->
+                <div id="categoryItems" class="category-items-grid">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Detail View -->
+        <section id="productDetailView" class="product-detail-view" style="display: none;">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidebar with product list -->
+                    <div class="col-lg-3 col-md-4">
+                        <div class="detail-sidebar">
+                            <button class="btn btn-outline-primary mb-4" id="backToCategory">
+                                <i class="fas fa-arrow-left me-2"></i>Back to Category
+                            </button>
+                            <h5 class="sidebar-title" id="sidebarTitle">Products</h5>
+                            <div class="sidebar-items" id="sidebarItems">
+                                <!-- Sidebar items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main content area -->
+                    <div class="col-lg-9 col-md-8">
+                        <div class="detail-content">
+                            <h2 class="detail-title" id="detailTitle">Product Name</h2>
+                            <div class="detail-image-container">
+                                <img id="detailImage" src="" alt="" class="detail-image">
+                            </div>
+                            <div class="detail-info mt-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Product Features</h5>
+                                        <ul id="productFeatures" class="feature-list">
+                                            <!-- Features will be populated by JavaScript -->
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Technical Specifications</h5>
+                                        <ul id="productSpecs" class="spec-list">
+                                            <!-- Specifications will be populated by JavaScript -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <h5>SILKCOAT | LIBERIA</h5>
+                        <p>Premium paint solutions for the Liberian market. Quality, durability, and excellence in every drop.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="#" data-category="effect-paint">Effect Paint</a></li>
+                        <li><a href="#" data-category="silk-plaster">Silk Plaster</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Monrovia, Liberia</p>
+                        <p><i class="fas fa-phone"></i> +231 776 812 328</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:silkcoatpaintliberia@gmail.com">silkcoatpaintliberia@gmail.com</a></p>
+                    </div>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/share/163BGHk5m9"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Silkcoat Liberia. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">Powered by Turkish Excellence</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
