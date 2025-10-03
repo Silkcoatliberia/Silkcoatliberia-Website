@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -52,7 +52,16 @@
                                     <li><a class="dropdown-item" href="products.html?category=acrylic-paint" data-category="acrylic-paint">Acrylic Paint</a></li>
                                 </ul>
                             </li>
-                            <li><a class="dropdown-item" href="products.html?category=exterior-paint" data-category="exterior-paint">Exterior Paint</a></li>
+                            <!-- NEW EXTERIOR DROPDOWN -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="exteriorPaintDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Exterior Paint
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="products.html?category=exterior-paint" data-category="exterior-paint">Decorative Paint</a></li>
+                                    <li><a class="dropdown-item" href="products.html?category=exterior-regular" data-category="exterior-regular">Regular Paint</a></li>
+                                </ul>
+                            </li>
                             <li><a class="dropdown-item" href="products.html?category=floor-paint" data-category="floor-paint">Floor Paint</a></li>
                             <li><a class="dropdown-item" href="products.html?category=car-paint" data-category="car-paint">Car Paint</a></li>
                         </ul>
@@ -69,7 +78,7 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link inventory-link" href="https://inventory-management-system-wgm7.onrender.com/login" id="inventoryLink">
+                        <a class="nav-link inventory-link" href="https://inventory.silkcoatpaintliberia.com" id="inventoryLink">
                             <i class="fas fa-boxes"></i> Login
                         </a>
                     </li>
