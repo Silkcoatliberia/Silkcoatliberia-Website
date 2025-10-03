@@ -97,27 +97,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
     // Handle dropdown submenus on mobile
+    // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
+    // Detect if device is touch-enabled
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-
+    
+    console.log('=== DROPDOWN DEBUG ===');
+    console.log('Is Touch Device:', isTouchDevice);
+    console.log('Window Width:', window.innerWidth);
+    console.log('Max Touch Points:', navigator.maxTouchPoints);
+    console.log('Has ontouchstart:', 'ontouchstart' in window);
+    
     // Disable Bootstrap's default dropdown behavior for submenus on touch devices
     if (isTouchDevice) {
         document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
             element.setAttribute('data-bs-toggle', '');
             element.removeAttribute('aria-expanded');
+            console.log('Disabled Bootstrap toggle on:', element.textContent.trim());
         });
     }
 
     // Handle submenu clicks on touch devices OR mobile screens
     document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
+            console.log('Submenu clicked:', this.textContent.trim());
+            console.log('isTouchDevice:', isTouchDevice, '| innerWidth < 992:', window.innerWidth < 992);
+            
             // Apply on touch devices regardless of screen size
             if (isTouchDevice || window.innerWidth < 992) {
+                console.log('Preventing default and handling click');
                 e.preventDefault();
                 e.stopPropagation();
                 
                 const parentSubmenu = this.closest('.dropdown-submenu');
                 const submenu = this.nextElementSibling;
                 const isOpen = parentSubmenu.classList.contains('show');
+                
+                console.log('Is currently open:', isOpen);
+                console.log('Parent submenu:', parentSubmenu);
+                console.log('Submenu element:', submenu);
                 
                 // Close all other submenus
                 document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
@@ -130,12 +147,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Toggle this submenu
                 if (isOpen) {
+                    console.log('Closing submenu');
                     parentSubmenu.classList.remove('show');
                     if (submenu) submenu.classList.remove('show');
                 } else {
+                    console.log('Opening submenu');
                     parentSubmenu.classList.add('show');
                     if (submenu) submenu.classList.add('show');
                 }
+                
+                console.log('After toggle - has show class:', parentSubmenu.classList.contains('show'));
+            } else {
+                console.log('NOT handling click - conditions not met');
             }
         });
     });
@@ -143,8 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle final dropdown item clicks (products/services links)
     document.querySelectorAll('.dropdown-menu .dropdown-item:not(.dropdown-toggle)').forEach(function(item) {
         item.addEventListener('click', function() {
+            console.log('Final item clicked:', this.textContent.trim());
+            
             // Close all dropdowns on touch devices or mobile
             if (isTouchDevice || window.innerWidth < 992) {
+                console.log('Closing all dropdowns');
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     menu.classList.remove('show');
                 });
