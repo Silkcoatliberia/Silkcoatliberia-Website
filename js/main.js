@@ -97,38 +97,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
     // Handle dropdown submenus on mobile
-    document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
-        element.addEventListener('click', function(e) {
-            if (window.innerWidth < 992) {
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    // Disable Bootstrap's default dropdown behavior for submenus on touch devices
+    if (isTouchDevice) {
+        document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
+            element.setAttribute('data-bs-toggle', '');
+            element.removeAttribute('aria-expanded');
+        });
+    }
+
+    // Handle submenu clicks on touch devices OR mobile screens
+    document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            // Apply on touch devices regardless of screen size
+            if (isTouchDevice || window.innerWidth < 992) {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const parentLi = this.closest('.dropdown-submenu');
+                const parentSubmenu = this.closest('.dropdown-submenu');
                 const submenu = this.nextElementSibling;
+                const isOpen = parentSubmenu.classList.contains('show');
                 
-                // Toggle the submenu
-                parentLi.classList.toggle('show');
-                submenu.classList.toggle('show');
-                
-                // Close other submenus
+                // Close all other submenus
                 document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
-                    if (item !== parentLi) {
+                    if (item !== parentSubmenu) {
                         item.classList.remove('show');
-                        const otherSubmenu = item.querySelector('.dropdown-menu');
-                        if (otherSubmenu) otherSubmenu.classList.remove('show');
+                        const menu = item.querySelector('.dropdown-menu');
+                        if (menu) menu.classList.remove('show');
                     }
                 });
+                
+                // Toggle this submenu
+                if (isOpen) {
+                    parentSubmenu.classList.remove('show');
+                    if (submenu) submenu.classList.remove('show');
+                } else {
+                    parentSubmenu.classList.add('show');
+                    if (submenu) submenu.classList.add('show');
+                }
             }
         });
     });
 
-    // Close dropdowns when clicking outside on mobile
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth < 992 && !e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.remove('show');
-            });
-        }
+    // Handle final dropdown item clicks (products/services links)
+    document.querySelectorAll('.dropdown-menu .dropdown-item:not(.dropdown-toggle)').forEach(function(item) {
+        item.addEventListener('click', function() {
+            // Close all dropdowns on touch devices or mobile
+            if (isTouchDevice || window.innerWidth < 992) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+                document.querySelectorAll('.dropdown-submenu.show').forEach(submenu => {
+                    submenu.classList.remove('show');
+                });
+                
+                // Close navbar only on smaller screens
+                if (window.innerWidth < 992) {
+                    setTimeout(function() {
+                        const navbar = document.querySelector('.navbar-collapse');
+                        const toggler = document.querySelector('.navbar-toggler');
+                        if (navbar && navbar.classList.contains('show') && toggler) {
+                            toggler.click();
+                        }
+                    }, 150);
+                }
+            }
+        });
     });
 
     // ===== PRODUCT AND SERVICE DATA ===== //
@@ -1271,6 +1306,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         renderCategoryItems(items, container, category) {
+            console.log('=== RENDER CATEGORY ITEMS DEBUG ===');
+            console.log('Category:', category);
+            console.log('Items count:', Object.keys(items).length);
+            console.log('Items keys:', Object.keys(items));
+            console.log('Container:', container);
+            console.log('==============================');
+
+            console.log('Items data:', items); // Check if data structure is the same
 
             container.innerHTML = '';
             
