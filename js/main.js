@@ -95,15 +95,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== BOOTSTRAP DROPDOWN INITIALIZATION FOR SUBMENUS ===== //
-    // Handle submenu clicks on desktop
-    document.querySelectorAll('.dropdown-submenu a.dropdown-toggle').forEach(function(element) {
+    // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
+    // Handle dropdown submenus on mobile
+    document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
         element.addEventListener('click', function(e) {
-            if (window.innerWidth > 767) {
+            if (window.innerWidth < 992) {
                 e.preventDefault();
                 e.stopPropagation();
+                
+                const parentLi = this.closest('.dropdown-submenu');
+                const submenu = this.nextElementSibling;
+                
+                // Toggle the submenu
+                parentLi.classList.toggle('show');
+                submenu.classList.toggle('show');
+                
+                // Close other submenus
+                document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
+                    if (item !== parentLi) {
+                        item.classList.remove('show');
+                        const otherSubmenu = item.querySelector('.dropdown-menu');
+                        if (otherSubmenu) otherSubmenu.classList.remove('show');
+                    }
+                });
             }
         });
+    });
+
+    // Close dropdowns when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth < 992 && !e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
     });
 
     // ===== PRODUCT AND SERVICE DATA ===== //
@@ -523,6 +548,105 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Weather Resistance: Superior outdoor durability',
                             'Application: Building facades, exterior walls',
                             'Warranty: 10-year exterior performance guarantee'
+                        ]
+                    },
+                    // NEW EXTERIOR DECORATIVE PAINTS
+                    'elastico': {
+                        name: 'Elastico',
+                        image: 'images/Color_Chart/Elastico/silkcoat_elastico.jpg',
+                        image_details: 'images/Color_Chart/Elastico/elastico_color_chart.jpg',
+                        features: [
+                            'Flexible and elastic coating that bridges hairline cracks',
+                            'Excellent waterproofing and weather resistance properties',
+                            'UV resistant formulation maintains color integrity',
+                            'Ideal for concrete, stucco, and masonry surfaces',
+                            'Long-lasting protection against harsh weather conditions'
+                        ],
+                        specs: [
+                            'Elasticity: Up to 300% elongation',
+                            'Crack Bridging: Up to 2mm cracks',
+                            'Weather Resistance: Excellent UV and water resistance',
+                            'Application: Concrete, stucco, masonry surfaces',
+                            'Durability: 10+ years weather protection'
+                        ]
+                    },
+                    'rolosev': {
+                        name: 'Rolosev',
+                        image: 'images/Color_Chart/Rolosev/silkcoat_rolosev.jpg',
+                        image_details: 'images/Color_Chart/Rolosev/rolosev_color_chart.jpg',
+                        features: [
+                            'Premium metallic finish for exterior applications',
+                            'Advanced UV protection prevents color fading',
+                            'Easy application with standard painting tools',
+                            'Creates luxurious architectural appearance',
+                            'Suitable for both residential and commercial buildings'
+                        ],
+                        specs: [
+                            'Metallic Finish: Premium aluminum and pearl effects',
+                            'UV Protection: Advanced UV-resistant formulation',
+                            'Application: Brush, roller, or spray application',
+                            'Surface Types: Most exterior surfaces',
+                            'Durability: Excellent weather and fade resistance'
+                        ]
+                    },
+                    'siltcoat-terasic': {
+                        name: 'Siltcoat Terasic',
+                        image: 'images/Color_Chart/Siltcoat/silkcoat_siltcoat.jpg',
+                        image_details: 'images/Color_Chart/Siltcoat/siltcoat_color_chart.jpg',
+                        features: [
+                            'Textured finish that mimics natural stone and terracotta',
+                            'Excellent durability against extreme weather conditions',
+                            'Breathable coating prevents moisture accumulation',
+                            'Mold and mildew resistant formulation',
+                            'Perfect for Mediterranean and traditional architectural styles'
+                        ],
+                        specs: [
+                            'Texture: Natural stone and terracotta effects',
+                            'Breathability: Excellent moisture vapor transmission',
+                            'Weather Resistance: Superior protection against elements',
+                            'Mold Resistance: Anti-microbial formulation',
+                            'Application: Exterior walls, facades, architectural features'
+                        ]
+                    }
+                }
+            },
+            'exterior-regular': {
+                title: 'Exterior Regular Paint',
+                items: {
+                    'acrylic-exterior': {
+                        name: 'Acrylic Exterior Paint',
+                        image: 'images/Effect_Paint/silkcoat-acrylic-exterior.jpg',
+                        features: [
+                            '100% acrylic resin formulation for maximum durability',
+                            'Excellent UV resistance and color retention',
+                            'Waterproof and weather-resistant properties',
+                            'Resists mold, mildew, and algae growth',
+                            'Easy application and quick drying time'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 2-4 hours',
+                            'Recoat Time: 4-6 hours',
+                            'Finish: Matte/Satin/Gloss available',
+                            'Warranty: 10-year limited warranty'
+                        ]
+                    },
+                    'weatherproof-enamel': {
+                        name: 'Weatherproof Enamel',
+                        image: 'images/Effect_Paint/silkcoat-enamel.jpg',
+                        features: [
+                            'High-gloss enamel finish for exterior trim and metal surfaces',
+                            'Exceptional resistance to chipping, peeling, and fading',
+                            'Rust-inhibitive properties for metal surfaces',
+                            'Withstands extreme weather conditions',
+                            'Easy cleanup with soap and water'
+                        ],
+                        specs: [
+                            'Coverage: 12-14 m²/L per coat',
+                            'Drying Time: 4-6 hours',
+                            'Recoat Time: 16-24 hours',
+                            'Finish: High gloss',
+                            'Application: Wood, metal, previously painted surfaces'
                         ]
                     }
                 }
@@ -1050,6 +1174,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon: 'fas fa-building'
                 },
                 {
+                    key: 'exterior-regular',
+                    title: 'Exterior Regular Paint',
+                    desc: 'Standard exterior paints for general applications',
+                    icon: 'fas fa-home'
+                },
+                {
                     key: 'floor-paint',
                     title: 'Floor Paint',
                     desc: 'Durable floor coatings for industrial and commercial use',
@@ -1144,15 +1274,29 @@ document.addEventListener('DOMContentLoaded', function() {
             container.innerHTML = '';
             
             const row = document.createElement('div');
-            row.className = 'row g-4';
+            row.className = 'row justify-content-start g-4';
             
             Object.keys(items).forEach(itemKey => {
                 const item = items[itemKey];
                 const col = document.createElement('div');
-                col.className = 'col-lg-2 col-md-3 col-sm-4 col-6';
                 
+                const itemCount = Object.keys(items).length;
+                let colClass = 'col-lg-3 col-md-4 col-sm-6 col-6'; // Default for 5+ items
+                
+                if (itemCount === 1) {
+                    colClass = 'col-12 col-md-6 col-lg-4'; // Centered appearance but left-aligned
+                } else if (itemCount === 2) {
+                    colClass = 'col-12 col-sm-6 col-lg-6'; // Two equal columns
+                } else if (itemCount === 3) {
+                    colClass = 'col-12 col-md-6 col-lg-4'; // Three equal columns
+                } else if (itemCount === 4) {
+                    colClass = 'col-12 col-sm-6 col-lg-3'; // Four equal columns - FIXED!
+                }
+                // 5+ items use the default
+                
+                col.className = colClass;
                 col.innerHTML = `
-                    <div class="category-item-card" data-category="${category}" data-item="${itemKey}">
+                    <div class="category-item-card h-100" data-category="${category}" data-item="${itemKey}">
                         <div class="category-item-image">
                             <img src="${item.image}" alt="${item.name}" class="img-fluid">
                             <div class="category-item-overlay">
@@ -1355,12 +1499,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU HANDLING ===== //
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     if (navbarToggler && navbarCollapse) {
         // Close mobile menu when clicking regular nav links (not dropdown toggles or items)
         const regularNavLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
         regularNavLinks.forEach(link => {
-            // Skip if it's a dropdown toggle
             if (!link.classList.contains('dropdown-toggle')) {
                 link.addEventListener('click', () => {
                     if (navbarCollapse.classList.contains('show')) {
@@ -1370,16 +1513,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Handle dropdown items - let Bootstrap handle desktop, custom handle mobile
-        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        // Handle dropdown items - close menu only when clicking actual product/service links
+        const dropdownItems = document.querySelectorAll('.dropdown-item:not(.dropdown-toggle)');
         dropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Close mobile menu after a short delay to allow navigation
-                setTimeout(() => {
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarToggler.click();
-                    }
-                }, 150);
+                // Only close if it's a final link, not a submenu toggle
+                if (!item.classList.contains('dropdown-toggle')) {
+                    setTimeout(() => {
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarToggler.click();
+                        }
+                    }, 150);
+                }
+            });
+        });
+        
+        // Prevent navbar collapse when clicking dropdown toggles on mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth < 992) {
+                    e.stopPropagation(); // Prevent event from reaching navbar collapse handler
+                }
             });
         });
     }
