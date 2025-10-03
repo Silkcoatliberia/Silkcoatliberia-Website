@@ -1271,14 +1271,6 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         renderCategoryItems(items, container, category) {
-            console.log('=== RENDER CATEGORY ITEMS DEBUG ===');
-            console.log('Category:', category);
-            console.log('Items count:', Object.keys(items).length);
-            console.log('Items keys:', Object.keys(items));
-            console.log('Container:', container);
-            console.log('==============================');
-
-            console.log('Items data:', items); // Check if data structure is the same
 
             container.innerHTML = '';
             
