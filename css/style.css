@@ -195,7 +195,7 @@ body {
     transform: rotate(180deg);
 }
 
-/* DROPDOWN SUBMENU - Desktop with mouse ONLY */
+/* DROPDOWN SUBMENU - Desktop */
 .dropdown-submenu {
     position: relative;
 }
@@ -207,6 +207,10 @@ body {
     margin-left: -1px;
     border-radius: 0 6px 6px 6px;
     display: none;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
 }
 
 /* ONLY enable hover on devices with mouse - NOT touch */
