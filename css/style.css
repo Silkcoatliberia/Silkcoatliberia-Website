@@ -213,24 +213,6 @@ body {
     display: block;
 }
 
-/* ONLY enable hover on devices with mouse - NOT touch */
-@media (hover: hover) and (pointer: fine) {
-    .dropdown-submenu:hover > .dropdown-menu {
-        display: block;
-    }
-}
-
-/* Touch devices: use .show class ONLY */
-@media (hover: none) and (pointer: coarse) {
-    .dropdown-submenu.show > .dropdown-menu {
-        display: block !important;
-    }
-    
-    .dropdown-submenu:not(.show) > .dropdown-menu {
-        display: none !important;
-    }
-}
-
 /* Submenu dropdown indicator */
 .dropdown-submenu > .dropdown-toggle::after {
     display: inline-block;

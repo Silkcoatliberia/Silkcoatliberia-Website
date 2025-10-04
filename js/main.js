@@ -133,7 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (item !== parentSubmenu) {
                         item.classList.remove('show');
                         const menu = item.querySelector('.dropdown-menu');
-                        if (menu) menu.classList.remove('show');
+                        if (menu) {
+                            menu.classList.remove('show');
+                            // Force reflow for Samsung browsers
+                            void menu.offsetWidth;
+                        }
                     }
                 });
                 
@@ -141,7 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (isOpen) {
                     console.log('Closing submenu');
                     parentSubmenu.classList.remove('show');
-                    if (submenu) submenu.classList.remove('show');
+                    if (submenu) {
+                        submenu.classList.remove('show');
+                        // Force reflow for Samsung browsers - THIS IS THE KEY FIX
+                        void submenu.offsetWidth;
+                    }
                 } else {
                     console.log('Opening submenu');
                     parentSubmenu.classList.add('show');
@@ -165,6 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Closing all dropdowns');
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     menu.classList.remove('show');
+                    // Force reflow for Samsung browsers
+                    void menu.offsetWidth;
                 });
                 document.querySelectorAll('.dropdown-submenu.show').forEach(submenu => {
                     submenu.classList.remove('show');
