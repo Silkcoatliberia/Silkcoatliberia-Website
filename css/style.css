@@ -206,7 +206,7 @@ body {
     margin-top: -6px;
     margin-left: -1px;
     border-radius: 0 6px 6px 6px;
-    display: none;
+    /* display: none; */
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
