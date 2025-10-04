@@ -195,7 +195,7 @@ body {
     transform: rotate(180deg);
 }
 
-/* DROPDOWN SUBMENU - Desktop */
+/* DROPDOWN SUBMENU - Desktop with mouse ONLY */
 .dropdown-submenu {
     position: relative;
 }
@@ -206,11 +206,25 @@ body {
     margin-top: -6px;
     margin-left: -1px;
     border-radius: 0 6px 6px 6px;
-    /* display: none; */
+    display: none;
 }
 
-.dropdown-submenu:hover > .dropdown-menu {
-    display: block;
+/* ONLY enable hover on devices with mouse - NOT touch */
+@media (hover: hover) and (pointer: fine) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Touch devices: use .show class ONLY */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown-submenu.show > .dropdown-menu {
+        display: block !important;
+    }
+    
+    .dropdown-submenu:not(.show) > .dropdown-menu {
+        display: none !important;
+    }
 }
 
 /* Submenu dropdown indicator */
