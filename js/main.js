@@ -99,6 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle dropdown submenus on mobile
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
+    console.log('=== DROPDOWN DEBUG ===');
+    console.log('Is Touch Device:', isTouchDevice);
+    console.log('Window Width:', window.innerWidth);
+    console.log('Max Touch Points:', navigator.maxTouchPoints);
+    console.log('Has ontouchstart:', 'ontouchstart' in window);
+    
     // Disable Bootstrap's default dropdown behavior for submenus on touch devices
     if (isTouchDevice) {
         document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
