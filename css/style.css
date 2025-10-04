@@ -1669,20 +1669,6 @@ body {
     }
 }
 
-/* Fix for dropdowns on touch devices */
-@media (hover: none) and (pointer: coarse) {
-    .dropdown-submenu:hover > .dropdown-menu {
-        display: none;
-    }
-    
-    .dropdown-submenu.show > .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-toggle::after {
-        pointer-events: none;
-    }
-}
 
 /* Ensure content is centered on all screen sizes */
 .container, 
@@ -1722,15 +1708,14 @@ html, body {
     transform: rotate(0deg);
 }
 
-/* Test */
-
-/* Samsung browser specific fixes */
+/* ===== SAMSUNG BROWSER FIXES ===== */
+/* Mobile dropdown fixes for Samsung and other touch devices */
 @media (max-width: 991.98px) {
     .dropdown-submenu .dropdown-menu {
         display: none !important;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: none !important; /* Remove transitions to prevent Samsung issues */
     }
     
     .dropdown-submenu.show .dropdown-menu {
@@ -1739,7 +1724,7 @@ html, body {
         visibility: visible;
     }
     
-    /* Force override any Bootstrap transitions that might interfere */
+    /* Force override Bootstrap states */
     .dropdown-menu.show {
         display: block !important;
         opacity: 1 !important;
@@ -1753,9 +1738,13 @@ html, body {
     }
 }
 
-/* Nuclear option for Samsung - remove transitions entirely */
-@media (max-width: 991.98px) {
-    .dropdown-menu {
-        transition: none !important;
+/* Additional touch device fixes */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: none;
+    }
+    
+    .dropdown-submenu.show > .dropdown-menu {
+        display: block;
     }
 }
