@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle submenu clicks on touch devices OR mobile screens
+    // Handle submenu clicks on touch devices OR mobile screens
     document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             console.log('Submenu clicked:', this.textContent.trim());
@@ -122,38 +123,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const parentSubmenu = this.closest('.dropdown-submenu');
                 const submenu = this.nextElementSibling;
-                const isOpen = parentSubmenu.classList.contains('show');
+                const isOpen = parentSubmenu.classList.contains('show') && submenu.classList.contains('show');
                 
                 console.log('Is currently open:', isOpen);
                 console.log('Parent submenu:', parentSubmenu);
                 console.log('Submenu element:', submenu);
                 
-                // Close all other submenus
+                // Close all other submenus first
                 document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
                     if (item !== parentSubmenu) {
                         item.classList.remove('show');
-                        const menu = item.querySelector('.dropdown-menu');
-                        if (menu) {
-                            menu.classList.remove('show');
-                            // Force reflow for Samsung browsers
-                            void menu.offsetWidth;
+                        const otherMenu = item.querySelector('.dropdown-menu');
+                        if (otherMenu) {
+                            otherMenu.classList.remove('show');
+                            // Samsung fix: directly manipulate display
+                            otherMenu.style.display = 'none';
+                            otherMenu.style.opacity = '0';
+                            otherMenu.style.visibility = 'hidden';
                         }
                     }
                 });
                 
-                // Toggle this submenu
+                // Toggle this submenu with Samsung-specific handling
                 if (isOpen) {
-                    console.log('Closing submenu');
+                    console.log('Closing submenu - Samsung aggressive approach');
                     parentSubmenu.classList.remove('show');
                     if (submenu) {
                         submenu.classList.remove('show');
-                        // Force reflow for Samsung browsers - THIS IS THE KEY FIX
-                        void submenu.offsetWidth;
+                        // Direct CSS manipulation for Samsung
+                        submenu.style.display = 'none';
+                        submenu.style.opacity = '0';
+                        submenu.style.visibility = 'hidden';
+                        submenu.style.height = '0';
+                        submenu.style.overflow = 'hidden';
                     }
                 } else {
                     console.log('Opening submenu');
                     parentSubmenu.classList.add('show');
-                    if (submenu) submenu.classList.add('show');
+                    if (submenu) {
+                        // Reset styles and show
+                        submenu.style.display = 'block';
+                        submenu.style.opacity = '1';
+                        submenu.style.visibility = 'visible';
+                        submenu.style.height = 'auto';
+                        submenu.style.overflow = 'visible';
+                        submenu.classList.add('show');
+                    }
                 }
                 
                 console.log('After toggle - has show class:', parentSubmenu.classList.contains('show'));

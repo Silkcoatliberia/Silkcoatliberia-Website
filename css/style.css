@@ -1721,3 +1721,41 @@ html, body {
 .dropdown-submenu.show .dropdown-toggle::after {
     transform: rotate(0deg);
 }
+
+/* Test */
+
+/* Samsung browser specific fixes */
+@media (max-width: 991.98px) {
+    .dropdown-submenu .dropdown-menu {
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown-submenu.show .dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Force override any Bootstrap transitions that might interfere */
+    .dropdown-menu.show {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .dropdown-menu:not(.show) {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
+
+/* Nuclear option for Samsung - remove transitions entirely */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        transition: none !important;
+    }
+}
