@@ -217,8 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 items: {
                     'marmarito': {
                         name: 'Marmarito',
-                        image: 'images/Color_Chart/Marmarito/silkcoat_marmarito.jpg',
-                        image_details: 'images/Color_Chart/Marmarito/marmarito_color_chart.jpg',
+                        image: 'images/interior/decorative/Marmarito/silkcoat_marmarito.jpg',
+                        image_details: 'images/interior/decorative/Marmarito/marmarito_color_chart.jpg',
                         features: [
                             'Exclusive designer color collection with limited availability',
                             'Curated palette developed in collaboration with interior design professionals',
@@ -236,8 +236,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'palace': {
                         name: 'Palace',
-                        image: 'images/Color_Chart/Palace/silkcoat_palace.jpg',
-                        image_details: 'images/Color_Chart/Palace/palace_color_chart.jpg',
+                        image: 'images/interior/decorative/Palace/silkcoat_palace.jpg',
+                        image_details: 'images/interior/decorative/Palace/palace_color_chart.jpg',
                         features: [
                             'Biophilic design palette inspired by natural earth elements',
                             'Organic color harmonies that promote wellness and tranquility',
@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'metalico': {
                         name: 'Metalico',
-                        image: 'images/Color_Chart/Metalico/silkcoat_metalico.jpg',
-                        image_details: 'images/Color_Chart/Metalico/metalico_color_chart.jpg',
+                        image: 'images/interior/decorative/Metalico/silkcoat_metalico.jpg',
+                        image_details: 'images/interior/decorative/Metalico/metalico_color_chart.jpg',
                         features: [
                             'High-saturation color collection for dynamic visual impact',
                             'Bold contemporary palette designed for statement applications',
@@ -274,8 +274,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'metalico-soft': {
                         name: 'Metalico Soft',
-                        image: 'images/Color_Chart/Metalico_Soft/silkcoat_metalico_soft.jpg',
-                        image_details: 'images/Color_Chart/Metalico_Soft/metalico_soft_color_chart.jpg',
+                        image: 'images/interior/decorative/Metalico_Soft/silkcoat_metalico_soft.jpg',
+                        image_details: 'images/interior/decorative/Metalico_Soft/metalico_soft_color_chart.jpg',
                         features: [
                             'Refined pastel collection with subtle metallic undertones',
                             'Light-reflective properties create spacious, airy environments',
@@ -291,10 +291,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Longevity: Classic appeal with enduring beauty'
                         ]
                     },
-                    'decortivo': {
-                        name: 'Decortivo',
-                        image: 'images/Color_Chart/Decortivo/silkcoat_decortivo.jpg',
-                        image_details: 'images/Color_Chart/Decortivo/decortivo_color_chart.jpg',
+                    'pearly': {
+                        name: 'Pearly',
+                        image: 'images/interior/decorative/Decortivo/silkcoat_decortivo.jpg',
+                        image_details: 'images/interior/decorative/Decortivo/decortivo_color_chart.jpg',
                         features: [
                             'Sophisticated pearlescent color range with iridescent depth',
                             'Multi-dimensional finishes that change with lighting conditions',
@@ -312,8 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'velvetto': {
                         name: 'Velvetto',
-                        image: 'images/Color_Chart/Velvetto/silkcoat_velvetto.jpg',
-                        image_details: 'images/Color_Chart/Velvetto/velvetto_color_chart.jpg',
+                        image: 'images/interior/decorative/Velvetto/silkcoat_velvetto.jpg',
+                        image_details: 'images/interior/decorative/Velvetto/velvetto_color_chart.jpg',
                         features: [
                             'Luxurious silk-textured color collection with velvet-like appearance',
                             'Rich, saturated hues with exceptional color depth and warmth',
@@ -331,8 +331,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'velvetto_soft': {
                         name: 'Velvetto Soft',
-                        image: 'images/Color_Chart/Velvetto_Soft/silkcoat_velvetto_soft.jpg',
-                        image_details: 'images/Color_Chart/Velvetto_Soft/velvetto_soft_color_chart.jpg',
+                        image: 'images/interior/decorative/Velvetto_Soft/silkcoat_velvetto_soft.jpg',
+                        image_details: 'images/interior/decorative/Velvetto_Soft/velvetto_soft_color_chart.jpg',
                         features: [
                             'Gentle velvet-textured palette with understated elegance',
                             'Muted color sophistication perfect for serene environments',
@@ -350,8 +350,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'arteco': {
                         name: 'Arteco',
-                        image: 'images/Color_Chart/Arteco/silkcoat_arteco.jpg',
-                        image_details: 'images/Color_Chart/Arteco/arteco_color_chart.jpg',
+                        image: 'images/interior/decorative/Arteco/silkcoat_arteco.jpg',
+                        image_details: 'images/interior/decorative/Arteco/arteco_color_chart.jpg',
                         features: [
                             'Artistic metallic color palette with professional-grade sophistication',
                             'Museum-quality pigment stability for long-term color integrity',
@@ -369,8 +369,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'pearl': {
                         name: 'Pearl',
-                        image: 'images/Color_Chart/Pearl/silkcoat_pearl.jpg',
-                        image_details: 'images/Color_Chart/Pearl/pearl_color_chart.jpg',
+                        image: 'images/interior/decorative/Pearl/silkcoat_pearl.jpg',
+                        image_details: 'images/interior/decorative/Pearl/pearl_color_chart.jpg',
                         features: [
                             'Natural pearl-inspired color collection with organic luminescence',
                             'Silk fiber integration creates unique texture and light interaction',
@@ -388,8 +388,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'magico': {
                         name: 'Magico',
-                        image: 'images/Color_Chart/Magico/silkcoat_magico.jpg',
-                        image_details: 'images/Color_Chart/Magico/magico_color_chart.jpg',
+                        image: 'images/interior/decorative/Magico/silkcoat_magico.jpg',
+                        image_details: 'images/interior/decorative/Magico/magico_color_chart.jpg',
                         features: [
                             'Mystical copper and bronze metallic color range with antique patina',
                             'Time-weathered appearance creates historical design authenticity',
@@ -407,8 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'cracos': {
                         name: 'Cracos',
-                        image: 'images/Color_Chart/Cracos/silkcoat_cracos.jpg',
-                        image_details: 'images/Color_Chart/Cracos/cracos_color_chart.jpg',
+                        image: 'images/interior/decorative/Cracos/silkcoat_cracos.jpg',
+                        image_details: 'images/interior/decorative/Cracos/cracos_color_chart.jpg',
                         features: [
                             'Premium silver metallic collection with mirror-like brilliance',
                             'High-reflectance surface technology maximizes light distribution',
@@ -426,8 +426,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'travertino': {
                         name: 'Travertino',
-                        image: 'images/Color_Chart/Travertino/silkcoat_travertino.jpg',
-                        image_details: 'images/Color_Chart/Travertino/travertino_color_chart.jpg',
+                        image: 'images/interior/decorative/Travertino/silkcoat_travertino.jpg',
+                        image_details: 'images/interior/decorative/Travertino/travertino_color_chart.jpg',
                         features: [
                             'Natural stone-inspired color palette with travertine marble aesthetics',
                             'Organic mineral color variations replicate authentic stone characteristics',
@@ -445,8 +445,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'prestige': {
                         name: 'Prestige',
-                        image: 'images/Color_Chart/Prestige/silkcoat_prestige.jpg',
-                        image_details: 'images/Color_Chart/Prestige/prestige_color_chart.jpg',
+                        image: 'images/interior/decorative/Prestige/silkcoat_prestige.jpg',
+                        image_details: 'images/interior/decorative/Prestige/prestige_color_chart.jpg',
                         features: [
                             'Ultra-premium color collection with exclusive formulation technology',
                             'Highest quality pigments ensure superior color performance',
@@ -467,9 +467,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'plastic-paint': {
                 title: 'Plastic Paint',
                 items: {
-                    'premium-plastic': {
-                        name: 'Premium Plastic Paint',
-                        image: 'images/Effect_Paint/silkcoat-Arteco.jpg',
+                    'new-prestige': {
+                        name: 'New Prestige',
+                        image: 'images/interior/plastic/prestige/new_prestige_plaster2.jpeg',
                         features: [
                             'High-quality plastic emulsion for interior walls',
                             'Excellent coverage and hiding power',
@@ -485,9 +485,27 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Application: Brush, Roller, Spray'
                         ]
                     },
-                    'economy-plastic': {
-                        name: 'Economy Plastic Paint',
-                        image: 'images/Effect_Paint/silkcoat-cracos.jpg',
+                    'liquid-wall-paper': {
+                        name: 'Liquid Wall Paper',
+                        image: 'images/interior/plastic/liquid_wall_paper_series/liquid_wall_paper.jpg',
+                        features: [
+                            'Budget-friendly plastic paint option',
+                            'Good coverage for basic interior walls',
+                            'Easy application and maintenance',
+                            'Available in standard colors',
+                            'Suitable for residential projects'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 3-4 hours',
+                            'Finish: Flat matte',
+                            'VOC Content: Standard',
+                            'Application: Brush, Roller'
+                        ]
+                    },
+                    'class-plastic': {
+                        name: 'Class Plastic',
+                        image: 'images/interior/plastic/class_plastic/class_plastic1.png',
                         features: [
                             'Budget-friendly plastic paint option',
                             'Good coverage for basic interior walls',
@@ -510,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 items: {
                     'premium-latex': {
                         name: 'Premium Latex Paint',
-                        image: 'images/Effect_Paint/silkcoat-decortivo.jpg',
+                        image: 'images/interior/latex/latex1.png',
                         features: [
                             'High-quality latex formulation for superior performance',
                             'Excellent washability and stain resistance',
@@ -528,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'standard-latex': {
                         name: 'Standard Latex Paint',
-                        image: 'images/Effect_Paint/silkcoat-Magico.jpg',
+                        image: 'images/interior/latex/latex2.jpeg',
                         features: [
                             'Reliable latex paint for general interior use',
                             'Good durability and coverage',
@@ -551,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 items: {
                     'premium-acrylic': {
                         name: 'Premium Acrylic Paint',
-                        image: 'images/Effect_Paint/silkcoat-Marmarito.png',
+                        image: 'images/interior/acrylic/acrylic1.png',
                         features: [
                             'High-performance 100% acrylic resin formulation',
                             'Superior adhesion to various substrates',
@@ -569,7 +587,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'artist-acrylic': {
                         name: 'Artist Acrylic Paint',
-                        image: 'images/Effect_Paint/silkcoat-Palace.jpg',
+                        image: 'images/interior/acrylic/acrylic2.png',
                         features: [
                             'Professional-grade acrylic paint for artistic applications',
                             'High pigment concentration for vibrant colors',
@@ -592,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 items: {
                     'stone': {
                         name: 'Stone',
-                        image: 'images/Color_Chart/Stone/silkcoat_stone.jpg',
+                        image: 'images/exterior/decorative/stone/stone1.png',
                         image_details: 'images/Color_Chart/Stone/stone_color_chart.jpg',
                         features: [
                             'Comprehensive natural stone color palette with geological authenticity',
@@ -611,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'travertino-exterior': {
                         name: 'Travertino Exterior',
-                        image: 'images/Color_Chart/Travertino/silkcoat_travertino.jpg',
+                        image: 'images/exterior/decorative/travertino/travertino1.png',
                         image_details: 'images/Color_Chart/Travertino/travertino_color_chart.jpg',
                         features: [
                             'Weather-resistant travertine finish for exterior applications',
@@ -629,10 +647,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         ]
                     },
                     // NEW EXTERIOR DECORATIVE PAINTS
-                    'elastico': {
-                        name: 'Elastico',
-                        image: 'images/Color_Chart/Elastico/silkcoat_elastico.jpg',
-                        image_details: 'images/Color_Chart/Elastico/elastico_color_chart.jpg',
+                    'elasticoat': {
+                        name: 'Elasticoat',
+                        image: 'images/exterior/decorative/elastico/elasticoat1.png',
+                        image_details: 'images/exterior/decorative/elastico/elasticoat1.png',
                         features: [
                             'Flexible and elastic coating that bridges hairline cracks',
                             'Excellent waterproofing and weather resistance properties',
@@ -648,10 +666,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Durability: 10+ years weather protection'
                         ]
                     },
-                    'rolosev': {
-                        name: 'Rolosev',
-                        image: 'images/Color_Chart/Rolosev/silkcoat_rolosev.jpg',
-                        image_details: 'images/Color_Chart/Rolosev/rolosev_color_chart.jpg',
+                    'ruloser': {
+                        name: 'Ruloser',
+                        image: 'images/exterior/decorative/ruloser/ruloser1.png',
+                        image_details: 'images/exterior/decorative/ruloser/ruloser1.png',
                         features: [
                             'Premium metallic finish for exterior applications',
                             'Advanced UV protection prevents color fading',
@@ -667,10 +685,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Durability: Excellent weather and fade resistance'
                         ]
                     },
-                    'siltcoat-terasic': {
-                        name: 'Siltcoat Terasic',
-                        image: 'images/Color_Chart/Siltcoat/silkcoat_siltcoat.jpg',
-                        image_details: 'images/Color_Chart/Siltcoat/siltcoat_color_chart.jpg',
+                    'siltcoterasit': {
+                        name: 'Siltcoterasit',
+                        image: 'images/exterior/decorative/silkoterasit/silkoterasit1.png',
+                        image_details: 'images/exterior/decorative/silkoterasit/silkoterasit1.png',
                         features: [
                             'Textured finish that mimics natural stone and terracotta',
                             'Excellent durability against extreme weather conditions',
@@ -693,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 items: {
                     'acrylic-exterior': {
                         name: 'Acrylic Exterior Paint',
-                        image: 'images/Effect_Paint/silkcoat-acrylic-exterior.jpg',
+                        image: 'images/exterior/regular/acrylic/acrylic1.png',
                         features: [
                             '100% acrylic resin formulation for maximum durability',
                             'Excellent UV resistance and color retention',
@@ -711,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     'weatherproof-enamel': {
                         name: 'Weatherproof Enamel',
-                        image: 'images/Effect_Paint/silkcoat-enamel.jpg',
+                        image: 'images/exterior/regular/acrylic/acrylic2.png',
                         features: [
                             'High-gloss enamel finish for exterior trim and metal surfaces',
                             'Exceptional resistance to chipping, peeling, and fading',
@@ -930,8 +948,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Longevity: Classic appeal with enduring beauty'
                         ]
                     },
-                    'decortivo': {
-                        name: 'Decortivo',
+                    'Pearly': {
+                        name: 'Pearly',
                         image: 'images/Color_Chart/Decortivo/silkcoat_decortivo.jpg',
                         image_details: 'images/Color_Chart/Decortivo/decortivo_color_chart.jpg',
                         features: [
