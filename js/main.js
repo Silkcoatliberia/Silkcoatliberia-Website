@@ -48,11 +48,11 @@
             hidePreloader();
         });
 
-    // Minimum display time (reduced to 300ms for faster feel)
+    // Minimum display time (reduced to 1s for faster feel)
     setTimeout(() => {
         minTimeElapsed = true;
         hidePreloader();
-    }, 300);
+    }, 1000);
 
     // Fallback after 3 seconds (reduced from 10s)
     setTimeout(() => {
