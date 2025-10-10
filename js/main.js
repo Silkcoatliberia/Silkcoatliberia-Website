@@ -286,50 +286,581 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Application Areas: Residential, healthcare, hospitality interiors',
                             'Color Coordination: Pre-matched harmony sets available'
                         ]
+                    },
+                    'metalico': {
+                        name: 'Metalico',
+                        image: 'images/interior/decorative/Metalico/silkcoat_metalico.jpg',
+                        image_details: 'images/interior/decorative/Metalico/metalico_color_chart.jpg',
+                        features: [
+                            'High-saturation color collection for dynamic visual impact',
+                            'Bold contemporary palette designed for statement applications',
+                            'Architectural accent colors optimized for lighting enhancement',
+                            'Creative expression tools for modern interior design concepts',
+                            'Specialty formulations for feature walls and artistic installations'
+                        ],
+                        specs: [
+                            'Bold Selection: 60+ high-impact color options',
+                            'Saturation Level: Maximum chroma intensity formulations',
+                            'Visual Impact: Dramatic focal point applications',
+                            'Optimal Use: Accent walls, artistic features, commercial spaces',
+                            'Pairing System: Coordinated neutral backdrop colors available'
+                        ]
+                    },
+                    'metalico-soft': {
+                        name: 'Metalico Soft',
+                        image: 'images/interior/decorative/Metalico_Soft/silkcoat_metalico_soft.jpg',
+                        image_details: 'images/interior/decorative/Metalico_Soft/metalico_soft_color_chart.jpg',
+                        features: [
+                            'Refined pastel collection with subtle metallic undertones',
+                            'Light-reflective properties create spacious, airy environments',
+                            'Child-safe formulations ideal for nurseries and family spaces',
+                            'Color therapy principles incorporated for stress relief and comfort',
+                            'Timeless aesthetic appeal transcends temporary design trends'
+                        ],
+                        specs: [
+                            'Gentle Palette: 70+ soft-toned options',
+                            'Color Temperature: Cool and warm balanced selections',
+                            'Light Reflection: Enhanced brightness and space perception',
+                            'Family Spaces: Nursery, bedroom, relaxation area optimization',
+                            'Longevity: Classic appeal with enduring beauty'
+                        ]
+                    },
+                    'pearly': {
+                        name: 'Pearly',
+                        image: 'images/interior/decorative/Decortivo/silkcoat_decortivo.jpg',
+                        image_details: 'images/interior/decorative/Decortivo/decortivo_color_chart.jpg',
+                        features: [
+                            'Sophisticated pearlescent color range with iridescent depth',
+                            'Multi-dimensional finishes that change with lighting conditions',
+                            'Elegant sophistication suitable for upscale residential applications',
+                            'Advanced pearl pigment technology creates luxurious surface effects',
+                            'Designer-grade finishes for premium interior environments'
+                        ],
+                        specs: [
+                            'Pearlescent Range: 45+ iridescent color options',
+                            'Finish Effect: Multi-dimensional pearl and shimmer',
+                            'Lighting Response: Dynamic color shifts with angle and illumination',
+                            'Premium Application: High-end residential and commercial projects',
+                            'Surface Quality: Smooth, elegant, washable finish'
+                        ]
+                    },
+                    'velvetto': {
+                        name: 'Velvetto',
+                        image: 'images/interior/decorative/Velvetto/silkcoat_velvetto.jpg',
+                        image_details: 'images/interior/decorative/Velvetto/velvetto_color_chart.jpg',
+                        features: [
+                            'Luxurious silk-textured color collection with velvet-like appearance',
+                            'Rich, saturated hues with exceptional color depth and warmth',
+                            'Tactile surface quality that invites physical interaction',
+                            'Acoustic benefits through texture-enhanced sound absorption',
+                            'Premium residential applications for sophisticated living spaces'
+                        ],
+                        specs: [
+                            'Velvet Collection: 55+ rich, tactile color options',
+                            'Texture Quality: Silk-fiber enhanced surface depth',
+                            'Color Depth: Maximum saturation with warm undertones',
+                            'Acoustic Properties: Enhanced sound dampening characteristics',
+                            'Application: Luxury residential, hospitality, retail environments'
+                        ]
+                    },
+                    'velvetto_soft': {
+                        name: 'Velvetto Soft',
+                        image: 'images/interior/decorative/Velvetto_Soft/silkcoat_velvetto_soft.jpg',
+                        image_details: 'images/interior/decorative/Velvetto_Soft/velvetto_soft_color_chart.jpg',
+                        features: [
+                            'Gentle velvet-textured palette with understated elegance',
+                            'Muted color sophistication perfect for serene environments',
+                            'Whisper-soft color tones that promote relaxation and comfort',
+                            'Balanced neutral base with subtle warm and cool variations',
+                            'Versatile coordination options for multi-room color schemes'
+                        ],
+                        specs: [
+                            'Soft Velvet Range: 65+ muted sophisticated options',
+                            'Color Intensity: Gentle, calming saturation levels',
+                            'Environmental Impact: Peaceful, serene atmosphere creation',
+                            'Coordination: Multi-room harmony and flow optimization',
+                            'Texture: Refined velvet surface with subtle tactile appeal'
+                        ]
+                    },
+                    'arteco': {
+                        name: 'Arteco',
+                        image: 'images/interior/decorative/Arteco/silkcoat_arteco.jpg',
+                        image_details: 'images/interior/decorative/Arteco/arteco_color_chart.jpg',
+                        features: [
+                            'Artistic metallic color palette with professional-grade sophistication',
+                            'Museum-quality pigment stability for long-term color integrity',
+                            'Architectural metallic finishes suitable for commercial applications',
+                            'Contemporary design integration with modern aesthetic principles',
+                            'Professional specification standards for high-visibility projects'
+                        ],
+                        specs: [
+                            'Metallic Artistic Range: 40+ professional-grade options',
+                            'Pigment Quality: Museum-standard lightfastness rating',
+                            'Commercial Grade: Architectural specification compliance',
+                            'Design Integration: Modern aesthetic compatibility',
+                            'Professional Standard: High-visibility project specifications'
+                        ]
+                    },
+                    'pearl': {
+                        name: 'Pearl',
+                        image: 'images/interior/decorative/Pearl/silkcoat_pearl.jpg',
+                        image_details: 'images/interior/decorative/Pearl/pearl_color_chart.jpg',
+                        features: [
+                            'Natural pearl-inspired color collection with organic luminescence',
+                            'Silk fiber integration creates unique texture and light interaction',
+                            'Sustainable natural materials with eco-friendly composition',
+                            'Breathable surface technology promotes healthy indoor environments',
+                            'Artisan-quality finishes with handcrafted appearance characteristics'
+                        ],
+                        specs: [
+                            'Pearl Collection: 35+ natural luminescent options',
+                            'Material Integration: Natural silk fiber enhancement',
+                            'Environmental Impact: Sustainable, eco-friendly formulation',
+                            'Indoor Air Quality: Breathable, non-toxic surface technology',
+                            'Artisan Quality: Handcrafted texture and appearance'
+                        ]
+                    },
+                    'magico': {
+                        name: 'Magico',
+                        image: 'images/interior/decorative/Magico/silkcoat_magico.jpg',
+                        image_details: 'images/interior/decorative/Magico/magico_color_chart.jpg',
+                        features: [
+                            'Mystical copper and bronze metallic color range with antique patina',
+                            'Time-weathered appearance creates historical design authenticity',
+                            'Architectural restoration compatibility for heritage projects',
+                            'Variable patina effects adapt to different lighting conditions',
+                            'Professional antiquing techniques for authentic vintage aesthetics'
+                        ],
+                        specs: [
+                            'Copper Bronze Range: 30+ antique patina variations',
+                            'Patina Effect: Authentic time-weathered appearance',
+                            'Heritage Compatibility: Architectural restoration appropriate',
+                            'Lighting Adaptation: Variable appearance in different illumination',
+                            'Authenticity: Professional antiquing and aging techniques'
+                        ]
+                    },
+                    'cracos': {
+                        name: 'Cracos',
+                        image: 'images/interior/decorative/Cracos/silkcoat_cracos.jpg',
+                        image_details: 'images/interior/decorative/Cracos/cracos_color_chart.jpg',
+                        features: [
+                            'Premium silver metallic collection with mirror-like brilliance',
+                            'High-reflectance surface technology maximizes light distribution',
+                            'Contemporary architectural applications for modern design schemes',
+                            'Tarnish-resistant formulation maintains long-term appearance',
+                            'Professional-grade finish quality for commercial installations'
+                        ],
+                        specs: [
+                            'Silver Metallic Range: 25+ high-brilliance options',
+                            'Reflectance Technology: Maximum light distribution enhancement',
+                            'Modern Applications: Contemporary architectural compatibility',
+                            'Tarnish Resistance: Long-term appearance preservation',
+                            'Commercial Grade: Professional installation standards'
+                        ]
+                    },
+                    'travertino': {
+                        name: 'Travertino',
+                        image: 'images/interior/decorative/Travertino/silkcoat_travertino.jpg',
+                        image_details: 'images/interior/decorative/Travertino/travertino_color_chart.jpg',
+                        features: [
+                            'Natural stone-inspired color palette with travertine marble aesthetics',
+                            'Organic mineral color variations replicate authentic stone characteristics',
+                            'Luxury architectural finishes suitable for high-end residential projects',
+                            'Dimensional color depth creates realistic stone texture appearance',
+                            'Mediterranean design compatibility with classical architectural elements'
+                        ],
+                        specs: [
+                            'Stone-Inspired Range: 40+ travertine marble variations',
+                            'Natural Variation: Authentic mineral color characteristics',
+                            'Luxury Application: High-end residential and commercial projects',
+                            'Dimensional Quality: Realistic stone texture depth',
+                            'Design Style: Mediterranean, classical architectural compatibility'
+                        ]
+                    },
+                    'prestige': {
+                        name: 'Prestige',
+                        image: 'images/interior/decorative/Prestige/silkcoat_prestige.jpg',
+                        image_details: 'images/interior/decorative/Prestige/prestige_color_chart.jpg',
+                        features: [
+                            'Ultra-premium color collection with exclusive formulation technology',
+                            'Highest quality pigments ensure superior color performance',
+                            'Executive-level applications for prestigious commercial projects',
+                            'Signature color development for brand identity and corporate environments',
+                            'Concierge color consultation service with premium project support'
+                        ],
+                        specs: [
+                            'Premium Collection: 60+ exclusive ultra-quality options',
+                            'Pigment Grade: Highest quality formulation standards',
+                            'Executive Applications: Prestigious commercial environments',
+                            'Custom Development: Signature brand color creation',
+                            'Concierge Service: Premium consultation and project support'
+                        ]
                     }
-                    // ... ADD ALL YOUR OTHER PRODUCTS FROM YOUR ORIGINAL FILE
                 }
             },
             'plastic-paint': {
                 title: 'Plastic Paint',
                 items: {
-                    // ... YOUR PLASTIC PAINT ITEMS
+                    'new-prestige': {
+                        name: 'New Prestige',
+                        image: 'images/interior/plastic/prestige/new_prestige_plaster2.jpeg',
+                        features: [
+                            'High-quality plastic emulsion for interior walls',
+                            'Excellent coverage and hiding power',
+                            'Washable and durable finish',
+                            'Low odor and quick drying',
+                            'Suitable for all interior surfaces'
+                        ],
+                        specs: [
+                            'Coverage: 12-14 m²/L per coat',
+                            'Drying Time: 2-4 hours',
+                            'Finish: Matte',
+                            'VOC Content: Low',
+                            'Application: Brush, Roller, Spray'
+                        ]
+                    },
+                    'liquid-wall-paper': {
+                        name: 'Liquid Wall Paper',
+                        image: 'images/interior/plastic/liquid_wall_paper_series/liquid_wall_paper.jpg',
+                        features: [
+                            'Budget-friendly plastic paint option',
+                            'Good coverage for basic interior walls',
+                            'Easy application and maintenance',
+                            'Available in standard colors',
+                            'Suitable for residential projects'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 3-4 hours',
+                            'Finish: Flat matte',
+                            'VOC Content: Standard',
+                            'Application: Brush, Roller'
+                        ]
+                    },
+                    'class-plastic': {
+                        name: 'Class Plastic',
+                        image: 'images/interior/plastic/class_plastic/class_plastic1.png',
+                        features: [
+                            'Budget-friendly plastic paint option',
+                            'Good coverage for basic interior walls',
+                            'Easy application and maintenance',
+                            'Available in standard colors',
+                            'Suitable for residential projects'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 3-4 hours',
+                            'Finish: Flat matte',
+                            'VOC Content: Standard',
+                            'Application: Brush, Roller'
+                        ]
+                    }
                 }
             },
             'latex-paint': {
                 title: 'Latex Paint',
                 items: {
-                    // ... YOUR LATEX PAINT ITEMS
+                    'premium-latex': {
+                        name: 'Premium Latex Paint',
+                        image: 'images/interior/latex/latex1.png',
+                        features: [
+                            'High-quality latex formulation for superior performance',
+                            'Excellent washability and stain resistance',
+                            'Zero VOC environmental friendly formula',
+                            'Superior color retention and fade resistance',
+                            'Antimicrobial properties for healthier environments'
+                        ],
+                        specs: [
+                            'Coverage: 14-16 m²/L per coat',
+                            'Drying Time: 1-2 hours',
+                            'Finish: Eggshell/Satin',
+                            'VOC Content: Zero VOC',
+                            'Application: Brush, Roller, Spray'
+                        ]
+                    },
+                    'standard-latex': {
+                        name: 'Standard Latex Paint',
+                        image: 'images/interior/latex/latex2.jpeg',
+                        features: [
+                            'Reliable latex paint for general interior use',
+                            'Good durability and coverage',
+                            'Easy cleanup with soap and water',
+                            'Available in multiple sheen levels',
+                            'Cost-effective solution for large projects'
+                        ],
+                        specs: [
+                            'Coverage: 12-14 m²/L per coat',
+                            'Drying Time: 2-3 hours',
+                            'Finish: Various sheens available',
+                            'VOC Content: Low VOC',
+                            'Application: Brush, Roller'
+                        ]
+                    }
                 }
             },
             'acrylic-paint': {
                 title: 'Acrylic Paint',
                 items: {
-                    // ... YOUR ACRYLIC PAINT ITEMS
+                    'premium-acrylic': {
+                        name: 'Premium Acrylic Paint',
+                        image: 'images/interior/acrylic/acrylic1.png',
+                        features: [
+                            'High-performance 100% acrylic resin formulation',
+                            'Superior adhesion to various substrates',
+                            'Excellent color retention and gloss retention',
+                            'Weather resistant for both interior and exterior use',
+                            'Self-priming on most surfaces'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 1-2 hours',
+                            'Finish: Semi-gloss/Gloss',
+                            'VOC Content: Low VOC',
+                            'Application: Brush, Roller, Spray'
+                        ]
+                    },
+                    'artist-acrylic': {
+                        name: 'Artist Acrylic Paint',
+                        image: 'images/interior/acrylic/acrylic2.png',
+                        features: [
+                            'Professional-grade acrylic paint for artistic applications',
+                            'High pigment concentration for vibrant colors',
+                            'Fast drying with permanent results',
+                            'Mixable for custom color creation',
+                            'Suitable for canvas, wood, and various surfaces'
+                        ],
+                        specs: [
+                            'Pigment Load: High concentration',
+                            'Drying Time: 30 minutes - 1 hour',
+                            'Finish: Varies by formulation',
+                            'Lightfastness: Excellent',
+                            'Application: Brush, Palette knife, Spray'
+                        ]
+                    }
                 }
             },
             'exterior-paint': {
                 title: 'Exterior Paint',
                 items: {
-                    // ... YOUR EXTERIOR PAINT ITEMS
+                    'stone': {
+                        name: 'Stone',
+                        image: 'images/exterior/decorative/stone/stone1.png',
+                        image_details: 'images/Color_Chart/Stone/stone_color_chart.jpg',
+                        features: [
+                            'Comprehensive natural stone color palette with geological authenticity',
+                            'Regional stone types represented including granite, limestone, and sandstone',
+                            'Architectural specification compatibility for stone veneer coordination',
+                            'Weathering and aging effects simulate natural stone patina development',
+                            'Professional masonry and architectural consultation available'
+                        ],
+                        specs: [
+                            'Natural Stone Range: 85+ geological color variations',
+                            'Stone Types: Granite, limestone, sandstone, marble representations',
+                            'Architectural Use: Stone veneer coordination and specification',
+                            'Weathering Effects: Natural patina and aging simulation',
+                            'Professional Service: Masonry and architectural consultation'
+                        ]
+                    },
+                    'travertino-exterior': {
+                        name: 'Travertino Exterior',
+                        image: 'images/exterior/decorative/travertino/travertino1.png',
+                        image_details: 'images/Color_Chart/Travertino/travertino_color_chart.jpg',
+                        features: [
+                            'Weather-resistant travertine finish for exterior applications',
+                            'UV-stable pigments maintain color integrity outdoors',
+                            'Enhanced durability against harsh weather conditions',
+                            'Natural stone appearance with superior protection',
+                            'Ideal for facades and exterior architectural elements'
+                        ],
+                        specs: [
+                            'Exterior Range: 40+ weather-resistant travertine variations',
+                            'UV Protection: Advanced UV-stable formulation',
+                            'Weather Resistance: Superior outdoor durability',
+                            'Application: Building facades, exterior walls',
+                            'Warranty: 10-year exterior performance guarantee'
+                        ]
+                    },
+                    // NEW EXTERIOR DECORATIVE PAINTS
+                    'elasticoat': {
+                        name: 'Elasticoat',
+                        image: 'images/exterior/decorative/elastico/elasticoat1.png',
+                        image_details: 'images/exterior/decorative/elastico/elasticoat1.png',
+                        features: [
+                            'Flexible and elastic coating that bridges hairline cracks',
+                            'Excellent waterproofing and weather resistance properties',
+                            'UV resistant formulation maintains color integrity',
+                            'Ideal for concrete, stucco, and masonry surfaces',
+                            'Long-lasting protection against harsh weather conditions'
+                        ],
+                        specs: [
+                            'Elasticity: Up to 300% elongation',
+                            'Crack Bridging: Up to 2mm cracks',
+                            'Weather Resistance: Excellent UV and water resistance',
+                            'Application: Concrete, stucco, masonry surfaces',
+                            'Durability: 10+ years weather protection'
+                        ]
+                    },
+                    'ruloser': {
+                        name: 'Ruloser',
+                        image: 'images/exterior/decorative/ruloser/ruloser1.png',
+                        image_details: 'images/exterior/decorative/ruloser/ruloser1.png',
+                        features: [
+                            'Premium metallic finish for exterior applications',
+                            'Advanced UV protection prevents color fading',
+                            'Easy application with standard painting tools',
+                            'Creates luxurious architectural appearance',
+                            'Suitable for both residential and commercial buildings'
+                        ],
+                        specs: [
+                            'Metallic Finish: Premium aluminum and pearl effects',
+                            'UV Protection: Advanced UV-resistant formulation',
+                            'Application: Brush, roller, or spray application',
+                            'Surface Types: Most exterior surfaces',
+                            'Durability: Excellent weather and fade resistance'
+                        ]
+                    },
+                    'siltcoterasit': {
+                        name: 'Siltcoterasit',
+                        image: 'images/exterior/decorative/silkoterasit/silkoterasit1.png',
+                        image_details: 'images/exterior/decorative/silkoterasit/silkoterasit1.png',
+                        features: [
+                            'Textured finish that mimics natural stone and terracotta',
+                            'Excellent durability against extreme weather conditions',
+                            'Breathable coating prevents moisture accumulation',
+                            'Mold and mildew resistant formulation',
+                            'Perfect for Mediterranean and traditional architectural styles'
+                        ],
+                        specs: [
+                            'Texture: Natural stone and terracotta effects',
+                            'Breathability: Excellent moisture vapor transmission',
+                            'Weather Resistance: Superior protection against elements',
+                            'Mold Resistance: Anti-microbial formulation',
+                            'Application: Exterior walls, facades, architectural features'
+                        ]
+                    }
                 }
             },
             'exterior-regular': {
                 title: 'Exterior Regular Paint',
                 items: {
-                    // ... YOUR EXTERIOR REGULAR ITEMS
+                    'acrylic-exterior': {
+                        name: 'Acrylic Exterior Paint',
+                        image: 'images/exterior/regular/acrylic/acrylic1.png',
+                        features: [
+                            '100% acrylic resin formulation for maximum durability',
+                            'Excellent UV resistance and color retention',
+                            'Waterproof and weather-resistant properties',
+                            'Resists mold, mildew, and algae growth',
+                            'Easy application and quick drying time'
+                        ],
+                        specs: [
+                            'Coverage: 10-12 m²/L per coat',
+                            'Drying Time: 2-4 hours',
+                            'Recoat Time: 4-6 hours',
+                            'Finish: Matte/Satin/Gloss available',
+                            'Warranty: 10-year limited warranty'
+                        ]
+                    },
+                    'weatherproof-enamel': {
+                        name: 'Weatherproof Enamel',
+                        image: 'images/exterior/regular/acrylic/acrylic2.png',
+                        features: [
+                            'High-gloss enamel finish for exterior trim and metal surfaces',
+                            'Exceptional resistance to chipping, peeling, and fading',
+                            'Rust-inhibitive properties for metal surfaces',
+                            'Withstands extreme weather conditions',
+                            'Easy cleanup with soap and water'
+                        ],
+                        specs: [
+                            'Coverage: 12-14 m²/L per coat',
+                            'Drying Time: 4-6 hours',
+                            'Recoat Time: 16-24 hours',
+                            'Finish: High gloss',
+                            'Application: Wood, metal, previously painted surfaces'
+                        ]
+                    }
                 }
             },
             'floor-paint': {
                 title: 'Floor Paint',
                 items: {
-                    // ... YOUR FLOOR PAINT ITEMS
+                    'epoxy-floor': {
+                        name: 'Epoxy Floor Paint',
+                        image: 'images/Effect_Paint/silkcoat-pearl.jpg',
+                        features: [
+                            'High-performance two-component epoxy system',
+                            'Exceptional durability and chemical resistance',
+                            'Seamless, easy-to-clean surface',
+                            'Available in various colors and finishes',
+                            'Suitable for industrial and commercial applications'
+                        ],
+                        specs: [
+                            'Coverage: 6-8 m²/L depending on porosity',
+                            'Pot Life: 45-60 minutes',
+                            'Full Cure: 7 days',
+                            'Finish: Gloss/Semi-gloss',
+                            'Chemical Resistance: Excellent'
+                        ]
+                    },
+                    'concrete-floor': {
+                        name: 'Concrete Floor Paint',
+                        image: 'images/Effect_Paint/silkcoat-velvetto.jpg',
+                        features: [
+                            'Single-component acrylic floor coating',
+                            'Dust-proofing and wear resistance',
+                            'Easy application and maintenance',
+                            'Non-slip additives available',
+                            'Suitable for warehouses and garages'
+                        ],
+                        specs: [
+                            'Coverage: 8-10 m²/L per coat',
+                            'Drying Time: 4-6 hours',
+                            'Full Cure: 24-48 hours',
+                            'Finish: Semi-gloss',
+                            'Traffic: Light to medium foot traffic'
+                        ]
+                    }
                 }
             },
             'car-paint': {
                 title: 'Car Paint',
                 items: {
-                    // ... YOUR CAR PAINT ITEMS
+                    'automotive-basecoat': {
+                        name: 'Automotive Basecoat',
+                        image: 'images/Effect_Paint/silkcoat-Metalico.jpg',
+                        features: [
+                            'High-quality automotive basecoat system',
+                            'Excellent color matching capabilities',
+                            'UV-resistant pigments prevent fading',
+                            'Compatible with standard clearcoat systems',
+                            'Professional automotive finish quality'
+                        ],
+                        specs: [
+                            'Application: Spray gun only',
+                            'Flash Time: 5-10 minutes between coats',
+                            'Coverage: 6-8 m²/L',
+                            'Color Match: Exact OEM specifications',
+                            'Durability: Automotive grade'
+                        ]
+                    },
+                    'automotive-clearcoat': {
+                        name: 'Automotive Clearcoat',
+                        image: 'images/Effect_Paint/silkcoat-MetalicoSoft.jpg',
+                        features: [
+                            '2K high-gloss clearcoat system',
+                            'Exceptional UV protection and durability',
+                            'High gloss retention over time',
+                            'Scratch and chip resistance',
+                            'Professional automotive finish'
+                        ],
+                        specs: [
+                            'Mixing Ratio: 2:1 with hardener',
+                            'Pot Life: 4-6 hours',
+                            'Spray Application: Multiple thin coats',
+                            'Full Cure: 7 days',
+                            'Gloss Level: High gloss (90+ GU)'
+                        ]
+                    }
                 }
             }
         },
@@ -337,7 +868,310 @@ document.addEventListener('DOMContentLoaded', function() {
             'color-chart': {
                 title: 'Color Chart',
                 items: {
-                    // ... YOUR COLOR CHART ITEMS
+                    'interior-colors': {
+                        name: 'Interior Paint',
+                        image: 'images/Color_Chart/Interior/silkcoat_interior.jpg',
+                        image_details: 'images/Color_Chart/Interior/interior_color_chart.jpg',
+                        features: [
+                            'Comprehensive palette of 200+ professionally curated interior colors',
+                            'Harmonized color families designed for seamless room coordination',
+                            'Lighting analysis tools to predict color performance in various conditions',
+                            'Advanced spectrophotometer color matching for existing surfaces',
+                            'Contemporary trend forecasting based on global design movements'
+                        ],
+                        specs: [
+                            'Total Colors: 200+ verified formulations',
+                            'Finish Variations: Matte, Eggshell, Satin, Semi-gloss',
+                            'Recommended Use: Interior walls, ceilings, trim',
+                            'Color Accuracy: ΔE<1 digital matching standard',
+                            'Test Samples: 50ml architect specification bottles'
+                        ]
+                    },
+                    'exterior-colors': {
+                        name: 'Exterior Paint',
+                        image: 'images/Color_Chart/Exterior/silkcoat_exterior.jpg',
+                        image_details: 'images/Color_Chart/Exterior/exterior_color_chart.jpg',
+                        features: [
+                            'Climate-engineered formulations with enhanced UV protection',
+                            'Lightfast pigment technology prevents color degradation over time',
+                            'Advanced fade-resistance testing ensures 10+ year color retention',
+                            'Regional climate optimization for Liberian weather conditions',
+                            'Architectural color coordination systems for building exteriors'
+                        ],
+                        specs: [
+                            'Color Selection: 150+ weather-tested options',
+                            'UV Stability: ASTM G154 certified excellent rating',
+                            'Weathering Performance: QUV 2000+ hour testing',
+                            'Color Retention: 95%+ after 10 years exposure',
+                            'Sample Size: 100ml field testing containers'
+                        ]
+                    },
+                    'marmarito': {
+                        name: 'Marmarito',
+                        image: 'images/Color_Chart/Marmarito/silkcoat_marmarito.jpg',
+                        image_details: 'images/Color_Chart/Marmarito/marmarito_color_chart.jpg',
+                        features: [
+                            'Exclusive designer color collection with limited availability',
+                            'Curated palette developed in collaboration with interior design professionals',
+                            'Premium metallic and textured finish options with unique depth',
+                            'Seasonal limited edition releases featuring cutting-edge color trends',
+                            'Complimentary design consultation service with color selection'
+                        ],
+                        specs: [
+                            'Exclusive Range: 50+ designer-curated colors',
+                            'Finish Categories: Metallic, pearl, satin, textured options',
+                            'Design Service: Professional consultation included',
+                            'Application Scope: Premium interior and exterior projects',
+                            'Premium Samples: 100ml designer specification containers'
+                        ]
+                    },
+                    'palace': {
+                        name: 'Palace',
+                        image: 'images/Color_Chart/Palace/silkcoat_palace.jpg',
+                        image_details: 'images/Color_Chart/Palace/palace_color_chart.jpg',
+                        features: [
+                            'Biophilic design palette inspired by natural earth elements',
+                            'Organic color harmonies that promote wellness and tranquility',
+                            'Scientifically balanced combinations supporting circadian rhythm health',
+                            'Sustainable color sourcing from natural mineral and plant-based pigments',
+                            'Therapeutic color psychology integration for stress reduction'
+                        ],
+                        specs: [
+                            'Natural Palette: 80+ earth-inspired tones',
+                            'Color Psychology: Wellness-focused combinations',
+                            'Mood Impact: Calming and grounding effects',
+                            'Application Areas: Residential, healthcare, hospitality interiors',
+                            'Color Coordination: Pre-matched harmony sets available'
+                        ]
+                    },
+                    'metalico': {
+                        name: 'Metalico',
+                        image: 'images/Color_Chart/Metalico/silkcoat_metalico.jpg',
+                        image_details: 'images/Color_Chart/Metalico/metalico_color_chart.jpg',
+                        features: [
+                            'High-saturation color collection for dynamic visual impact',
+                            'Bold contemporary palette designed for statement applications',
+                            'Architectural accent colors optimized for lighting enhancement',
+                            'Creative expression tools for modern interior design concepts',
+                            'Specialty formulations for feature walls and artistic installations'
+                        ],
+                        specs: [
+                            'Bold Selection: 60+ high-impact color options',
+                            'Saturation Level: Maximum chroma intensity formulations',
+                            'Visual Impact: Dramatic focal point applications',
+                            'Optimal Use: Accent walls, artistic features, commercial spaces',
+                            'Pairing System: Coordinated neutral backdrop colors available'
+                        ]
+                    },
+                    'metalico-soft': {
+                        name: 'Metalico Soft',
+                        image: 'images/Color_Chart/Metalico_Soft/silkcoat_metalico_soft.jpg',
+                        image_details: 'images/Color_Chart/Metalico_Soft/metalico_soft_color_chart.jpg',
+                        features: [
+                            'Refined pastel collection with subtle metallic undertones',
+                            'Light-reflective properties create spacious, airy environments',
+                            'Child-safe formulations ideal for nurseries and family spaces',
+                            'Color therapy principles incorporated for stress relief and comfort',
+                            'Timeless aesthetic appeal transcends temporary design trends'
+                        ],
+                        specs: [
+                            'Gentle Palette: 70+ soft-toned options',
+                            'Color Temperature: Cool and warm balanced selections',
+                            'Light Reflection: Enhanced brightness and space perception',
+                            'Family Spaces: Nursery, bedroom, relaxation area optimization',
+                            'Longevity: Classic appeal with enduring beauty'
+                        ]
+                    },
+                    'Pearly': {
+                        name: 'Pearly',
+                        image: 'images/Color_Chart/Decortivo/silkcoat_decortivo.jpg',
+                        image_details: 'images/Color_Chart/Decortivo/decortivo_color_chart.jpg',
+                        features: [
+                            'Sophisticated pearlescent color range with iridescent depth',
+                            'Multi-dimensional finishes that change with lighting conditions',
+                            'Elegant sophistication suitable for upscale residential applications',
+                            'Advanced pearl pigment technology creates luxurious surface effects',
+                            'Designer-grade finishes for premium interior environments'
+                        ],
+                        specs: [
+                            'Pearlescent Range: 45+ iridescent color options',
+                            'Finish Effect: Multi-dimensional pearl and shimmer',
+                            'Lighting Response: Dynamic color shifts with angle and illumination',
+                            'Premium Application: High-end residential and commercial projects',
+                            'Surface Quality: Smooth, elegant, washable finish'
+                        ]
+                    },
+                    'velvetto': {
+                        name: 'Velvetto',
+                        image: 'images/Color_Chart/Velvetto/silkcoat_velvetto.jpg',
+                        image_details: 'images/Color_Chart/Velvetto/velvetto_color_chart.jpg',
+                        features: [
+                            'Luxurious silk-textured color collection with velvet-like appearance',
+                            'Rich, saturated hues with exceptional color depth and warmth',
+                            'Tactile surface quality that invites physical interaction',
+                            'Acoustic benefits through texture-enhanced sound absorption',
+                            'Premium residential applications for sophisticated living spaces'
+                        ],
+                        specs: [
+                            'Velvet Collection: 55+ rich, tactile color options',
+                            'Texture Quality: Silk-fiber enhanced surface depth',
+                            'Color Depth: Maximum saturation with warm undertones',
+                            'Acoustic Properties: Enhanced sound dampening characteristics',
+                            'Application: Luxury residential, hospitality, retail environments'
+                        ]
+                    },
+                    'velvetto_soft': {
+                        name: 'Velvetto Soft',
+                        image: 'images/Color_Chart/Velvetto_Soft/silkcoat_velvetto_soft.jpg',
+                        image_details: 'images/Color_Chart/Velvetto_Soft/velvetto_soft_color_chart.jpg',
+                        features: [
+                            'Gentle velvet-textured palette with understated elegance',
+                            'Muted color sophistication perfect for serene environments',
+                            'Whisper-soft color tones that promote relaxation and comfort',
+                            'Balanced neutral base with subtle warm and cool variations',
+                            'Versatile coordination options for multi-room color schemes'
+                        ],
+                        specs: [
+                            'Soft Velvet Range: 65+ muted sophisticated options',
+                            'Color Intensity: Gentle, calming saturation levels',
+                            'Environmental Impact: Peaceful, serene atmosphere creation',
+                            'Coordination: Multi-room harmony and flow optimization',
+                            'Texture: Refined velvet surface with subtle tactile appeal'
+                        ]
+                    },
+                    'arteco': {
+                        name: 'Arteco',
+                        image: 'images/Color_Chart/Arteco/silkcoat_arteco.jpg',
+                        image_details: 'images/Color_Chart/Arteco/arteco_color_chart.jpg',
+                        features: [
+                            'Artistic metallic color palette with professional-grade sophistication',
+                            'Museum-quality pigment stability for long-term color integrity',
+                            'Architectural metallic finishes suitable for commercial applications',
+                            'Contemporary design integration with modern aesthetic principles',
+                            'Professional specification standards for high-visibility projects'
+                        ],
+                        specs: [
+                            'Metallic Artistic Range: 40+ professional-grade options',
+                            'Pigment Quality: Museum-standard lightfastness rating',
+                            'Commercial Grade: Architectural specification compliance',
+                            'Design Integration: Modern aesthetic compatibility',
+                            'Professional Standard: High-visibility project specifications'
+                        ]
+                    },
+                    'pearl': {
+                        name: 'Pearl',
+                        image: 'images/Color_Chart/Pearl/silkcoat_pearl.jpg',
+                        image_details: 'images/Color_Chart/Pearl/pearl_color_chart.jpg',
+                        features: [
+                            'Natural pearl-inspired color collection with organic luminescence',
+                            'Silk fiber integration creates unique texture and light interaction',
+                            'Sustainable natural materials with eco-friendly composition',
+                            'Breathable surface technology promotes healthy indoor environments',
+                            'Artisan-quality finishes with handcrafted appearance characteristics'
+                        ],
+                        specs: [
+                            'Pearl Collection: 35+ natural luminescent options',
+                            'Material Integration: Natural silk fiber enhancement',
+                            'Environmental Impact: Sustainable, eco-friendly formulation',
+                            'Indoor Air Quality: Breathable, non-toxic surface technology',
+                            'Artisan Quality: Handcrafted texture and appearance'
+                        ]
+                    },
+                    'magico': {
+                        name: 'Magico',
+                        image: 'images/Color_Chart/Magico/silkcoat_magico.jpg',
+                        image_details: 'images/Color_Chart/Magico/magico_color_chart.jpg',
+                        features: [
+                            'Mystical copper and bronze metallic color range with antique patina',
+                            'Time-weathered appearance creates historical design authenticity',
+                            'Architectural restoration compatibility for heritage projects',
+                            'Variable patina effects adapt to different lighting conditions',
+                            'Professional antiquing techniques for authentic vintage aesthetics'
+                        ],
+                        specs: [
+                            'Copper Bronze Range: 30+ antique patina variations',
+                            'Patina Effect: Authentic time-weathered appearance',
+                            'Heritage Compatibility: Architectural restoration appropriate',
+                            'Lighting Adaptation: Variable appearance in different illumination',
+                            'Authenticity: Professional antiquing and aging techniques'
+                        ]
+                    },
+                    'cracos': {
+                        name: 'Cracos',
+                        image: 'images/Color_Chart/Cracos/silkcoat_cracos.jpg',
+                        image_details: 'images/Color_Chart/Cracos/cracos_color_chart.jpg',
+                        features: [
+                            'Premium silver metallic collection with mirror-like brilliance',
+                            'High-reflectance surface technology maximizes light distribution',
+                            'Contemporary architectural applications for modern design schemes',
+                            'Tarnish-resistant formulation maintains long-term appearance',
+                            'Professional-grade finish quality for commercial installations'
+                        ],
+                        specs: [
+                            'Silver Metallic Range: 25+ high-brilliance options',
+                            'Reflectance Technology: Maximum light distribution enhancement',
+                            'Modern Applications: Contemporary architectural compatibility',
+                            'Tarnish Resistance: Long-term appearance preservation',
+                            'Commercial Grade: Professional installation standards'
+                        ]
+                    },
+                    'travertino': {
+                        name: 'Travertino',
+                        image: 'images/Color_Chart/Travertino/silkcoat_travertino.jpg',
+                        image_details: 'images/Color_Chart/Travertino/travertino_color_chart.jpg',
+                        features: [
+                            'Natural stone-inspired color palette with travertine marble aesthetics',
+                            'Organic mineral color variations replicate authentic stone characteristics',
+                            'Luxury architectural finishes suitable for high-end residential projects',
+                            'Dimensional color depth creates realistic stone texture appearance',
+                            'Mediterranean design compatibility with classical architectural elements'
+                        ],
+                        specs: [
+                            'Stone-Inspired Range: 40+ travertine marble variations',
+                            'Natural Variation: Authentic mineral color characteristics',
+                            'Luxury Application: High-end residential and commercial projects',
+                            'Dimensional Quality: Realistic stone texture depth',
+                            'Design Style: Mediterranean, classical architectural compatibility'
+                        ]
+                    },
+                    'prestige': {
+                        name: 'Prestige',
+                        image: 'images/Color_Chart/Prestige/silkcoat_prestige.jpg',
+                        image_details: 'images/Color_Chart/Prestige/prestige_color_chart.jpg',
+                        features: [
+                            'Ultra-premium color collection with exclusive formulation technology',
+                            'Highest quality pigments ensure superior color performance',
+                            'Executive-level applications for prestigious commercial projects',
+                            'Signature color development for brand identity and corporate environments',
+                            'Concierge color consultation service with premium project support'
+                        ],
+                        specs: [
+                            'Premium Collection: 60+ exclusive ultra-quality options',
+                            'Pigment Grade: Highest quality formulation standards',
+                            'Executive Applications: Prestigious commercial environments',
+                            'Custom Development: Signature brand color creation',
+                            'Concierge Service: Premium consultation and project support'
+                        ]
+                    },
+                    'stone': {
+                        name: 'Stone',
+                        image: 'images/Color_Chart/Stone/silkcoat_stone.jpg',
+                        image_details: 'images/Color_Chart/Stone/stone_color_chart.jpg',
+                        features: [
+                            'Comprehensive natural stone color palette with geological authenticity',
+                            'Regional stone types represented including granite, limestone, and sandstone',
+                            'Architectural specification compatibility for stone veneer coordination',
+                            'Weathering and aging effects simulate natural stone patina development',
+                            'Professional masonry and architectural consultation available'
+                        ],
+                        specs: [
+                            'Natural Stone Range: 85+ geological color variations',
+                            'Stone Types: Granite, limestone, sandstone, marble representations',
+                            'Architectural Use: Stone veneer coordination and specification',
+                            'Weathering Effects: Natural patina and aging simulation',
+                            'Professional Service: Masonry and architectural consultation'
+                        ]
+                    }
                 }
             }
         }
