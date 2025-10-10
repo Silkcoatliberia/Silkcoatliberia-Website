@@ -1,123 +1,94 @@
-// ===== SILKCOAT LIBERIA MAIN JAVASCRIPT WITH DIAGNOSTICS ===== //
+// ===== SILKCOAT LIBERIA MAIN JAVASCRIPT - OPTIMIZED ===== //
 
-console.log('=== SCRIPT START ===', new Date().toISOString());
-
-// ===== PRELOADER WITH DIAGNOSTICS ===== //
+// ===== OPTIMIZED PRELOADER - LOADS ONLY FIRST IMAGE ===== //
 (function() {
-    const startTime = performance.now();
-    console.log('Preloader function started at:', startTime);
-    
     const preloader = document.getElementById('preloader');
-    if (!preloader) {
-        console.error('PRELOADER NOT FOUND!');
-        return;
-    }
-    console.log('Preloader element found');
+    if (!preloader) return;
 
-    let assetsLoaded = false;
+    let firstImageLoaded = false;
     let minTimeElapsed = false;
 
     function hidePreloader() {
-        if (assetsLoaded && minTimeElapsed) {
-            const hideTime = performance.now();
-            console.log(`=== HIDING PRELOADER after ${((hideTime - startTime) / 1000).toFixed(2)}s ===`);
+        if (firstImageLoaded && minTimeElapsed) {
             preloader.style.opacity = '0';
             setTimeout(() => {
                 preloader.style.display = 'none';
-                console.log('Preloader completely hidden');
             }, 500);
         }
     }
 
-    // Critical images - CHECK IF THESE PATHS ARE CORRECT!
+    // ONLY load the first hero image and logo - rest load in background
     const criticalImages = [
-        'public/images/marm.png',
-        'public/images/silkcoat_logo.png'
+        'public/images/silkcoat_logo.png',
+        'public/images/marm.png'  // Only first slide
     ];
 
     let loadedCount = 0;
     const totalImages = criticalImages.length;
 
     function preloadImage(src) {
-        const imgStartTime = performance.now();
-        console.log(`Starting to load: ${src}`);
-        
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const img = new Image();
-            
             img.onload = () => {
-                const imgEndTime = performance.now();
-                const loadTime = ((imgEndTime - imgStartTime) / 1000).toFixed(2);
                 loadedCount++;
-                console.log(`✓ LOADED (${loadTime}s) [${loadedCount}/${totalImages}]: ${src}`);
-                console.log(`  - Image size: ${img.width}x${img.height}`);
                 resolve();
             };
-            
-            img.onerror = (error) => {
-                const imgEndTime = performance.now();
-                const loadTime = ((imgEndTime - imgStartTime) / 1000).toFixed(2);
-                console.error(`✗ FAILED (${loadTime}s): ${src}`, error);
+            img.onerror = () => {
                 loadedCount++;
                 resolve(); // Still resolve to not block
             };
-            
             img.src = src;
         });
     }
 
-    console.log('Starting to preload images...');
-    const loadStartTime = performance.now();
-    
+    // Load critical images
     Promise.all(criticalImages.map(preloadImage))
         .then(() => {
-            const loadEndTime = performance.now();
-            const totalLoadTime = ((loadEndTime - loadStartTime) / 1000).toFixed(2);
-            console.log(`=== ALL IMAGES LOADED in ${totalLoadTime}s ===`);
-            assetsLoaded = true;
-            hidePreloader();
-        })
-        .catch((error) => {
-            console.error('Image loading error:', error);
-            assetsLoaded = true;
+            firstImageLoaded = true;
             hidePreloader();
         });
 
-    // Minimum display time
+    // Minimum display time (reduced to 300ms for faster feel)
     setTimeout(() => {
-        console.log('Minimum time elapsed (500ms)');
         minTimeElapsed = true;
         hidePreloader();
-    }, 500);
+    }, 300);
 
-    // Fallback: Force hide after 10 seconds
+    // Fallback after 3 seconds (reduced from 10s)
     setTimeout(() => {
-        const fallbackTime = performance.now();
-        console.warn(`⚠️ FALLBACK TRIGGERED after ${((fallbackTime - startTime) / 1000).toFixed(2)}s`);
-        assetsLoaded = true;
+        firstImageLoaded = true;
         minTimeElapsed = true;
         hidePreloader();
-    }, 10000);
+    }, 3000);
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== DOM CONTENT LOADED ===', new Date().toISOString());
     
+    // ===== LAZY LOAD REMAINING HERO IMAGES IN BACKGROUND ===== //
+    const remainingHeroImages = [
+        'public/images/2travert.png',
+        'public/images/3pearly.png',
+        'public/images/4palace.png',
+        'public/images/6pearl.png'
+    ];
+    
+    // Load these AFTER page is visible
+    setTimeout(() => {
+        remainingHeroImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, 100);
+
     // ===== HERO SLIDESHOW ===== //
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    console.log(`Found ${slides.length} slides and ${dots.length} dots`);
-    
     let currentSlide = 0;
     let slideInterval;
 
     function initSlideshow() {
-        if (slides.length === 0) {
-            console.warn('No slides found, skipping slideshow');
-            return;
-        }
+        if (slides.length === 0) return;
         
-        console.log('Initializing slideshow...');
         slides[0].classList.add('active');
         if (dots.length > 0) dots[0].classList.add('active');
         
@@ -129,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetSlideshow();
             });
         });
-        console.log('Slideshow initialized');
     }
 
     function startSlideshow() {
@@ -158,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
 
-    // Only init slideshow on index page
     if (window.location.pathname === '/' || 
         window.location.pathname.includes('index.html') || 
         window.location.pathname === '/workspace/index.html' ||
@@ -191,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== MOBILE DROPDOWN FIXES ===== //
+    // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
     if (isTouchDevice) {
@@ -274,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===== PRODUCT AND SERVICE DATA ===== //
-    console.log('Loading data manager...');
     const dataManager = {
         products: {
             'decorative-paint': {
@@ -298,31 +266,93 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Application Scope: Premium interior and exterior projects',
                             'Premium Samples: 100ml designer specification containers'
                         ]
+                    },
+                    // ADD REST OF YOUR PRODUCTS HERE - keeping full structure
+                    'palace': {
+                        name: 'Palace',
+                        image: 'images/interior/decorative/Palace/silkcoat_palace.jpg',
+                        image_details: 'images/interior/decorative/Palace/palace_color_chart.jpg',
+                        features: [
+                            'Biophilic design palette inspired by natural earth elements',
+                            'Organic color harmonies that promote wellness and tranquility',
+                            'Scientifically balanced combinations supporting circadian rhythm health',
+                            'Sustainable color sourcing from natural mineral and plant-based pigments',
+                            'Therapeutic color psychology integration for stress reduction'
+                        ],
+                        specs: [
+                            'Natural Palette: 80+ earth-inspired tones',
+                            'Color Psychology: Wellness-focused combinations',
+                            'Mood Impact: Calming and grounding effects',
+                            'Application Areas: Residential, healthcare, hospitality interiors',
+                            'Color Coordination: Pre-matched harmony sets available'
+                        ]
                     }
-                    // ... rest of your products
+                    // ... ADD ALL YOUR OTHER PRODUCTS FROM YOUR ORIGINAL FILE
+                }
+            },
+            'plastic-paint': {
+                title: 'Plastic Paint',
+                items: {
+                    // ... YOUR PLASTIC PAINT ITEMS
+                }
+            },
+            'latex-paint': {
+                title: 'Latex Paint',
+                items: {
+                    // ... YOUR LATEX PAINT ITEMS
+                }
+            },
+            'acrylic-paint': {
+                title: 'Acrylic Paint',
+                items: {
+                    // ... YOUR ACRYLIC PAINT ITEMS
+                }
+            },
+            'exterior-paint': {
+                title: 'Exterior Paint',
+                items: {
+                    // ... YOUR EXTERIOR PAINT ITEMS
+                }
+            },
+            'exterior-regular': {
+                title: 'Exterior Regular Paint',
+                items: {
+                    // ... YOUR EXTERIOR REGULAR ITEMS
+                }
+            },
+            'floor-paint': {
+                title: 'Floor Paint',
+                items: {
+                    // ... YOUR FLOOR PAINT ITEMS
+                }
+            },
+            'car-paint': {
+                title: 'Car Paint',
+                items: {
+                    // ... YOUR CAR PAINT ITEMS
                 }
             }
-            // ... rest of your product categories
         },
         services: {
-            // ... your services
+            'color-chart': {
+                title: 'Color Chart',
+                items: {
+                    // ... YOUR COLOR CHART ITEMS
+                }
+            }
         }
     };
 
     // ===== NAVIGATION MANAGER ===== //
-    console.log('Initializing navigation manager...');
     const navigationManager = {
         currentPage: null,
         currentCategory: null,
         currentItem: null,
 
         init() {
-            console.log('Navigation manager init started');
             this.currentPage = this.detectPage();
-            console.log('Current page:', this.currentPage);
             this.bindEvents();
             this.handleInitialLoad();
-            console.log('Navigation manager initialized');
         },
 
         detectPage() {
@@ -332,22 +362,586 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         bindEvents() {
-            // Your existing bindEvents code
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('.dropdown-item[data-category]')) {
+                    e.preventDefault();
+                    const category = e.target.getAttribute('data-category');
+                    const targetPage = category === 'color-chart' ? 'services' : 'products';
+                    
+                    if (this.currentPage === targetPage) {
+                        this.showCategoryGrid(category);
+                    } else {
+                        window.location.href = `${targetPage}.html?category=${category}`;
+                    }
+                }
+
+                if (e.target.matches('.footer-links a[data-category]')) {
+                    e.preventDefault();
+                    const category = e.target.getAttribute('data-category');
+                    const targetPage = category === 'color-chart' ? 'services' : 'products';
+                    
+                    if (this.currentPage === targetPage) {
+                        this.showCategoryGrid(category);
+                    } else {
+                        window.location.href = `${targetPage}.html?category=${category}`;
+                    }
+                }
+
+                if (e.target.matches('#backToCategory') || e.target.closest('#backToCategory')) {
+                    e.preventDefault();
+                    this.showCategoryGrid(this.currentCategory);
+                }
+            });
         },
 
         handleInitialLoad() {
-            // Your existing handleInitialLoad code
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            const item = urlParams.get('item');
+
+            if (category) {
+                this.showCategoryGrid(category);
+                if (item) {
+                    setTimeout(() => this.showItemDetail(category, item), 100);
+                }
+            } else if (this.currentPage) {
+                this.showCategorySelection();
+            }
         },
 
-        // ... rest of your navigation manager methods
+        showCategorySelection() {
+            const gridView = document.getElementById('categoryGridView');
+            const detailView = document.getElementById('productDetailView') || document.getElementById('serviceDetailView');
+            const categoryTitle = document.getElementById('categoryTitle');
+            const categoryItems = document.getElementById('categoryItems');
+
+            if (!gridView || !categoryItems) return;
+
+            gridView.style.display = 'block';
+            if (detailView) detailView.style.display = 'none';
+
+            if (this.currentPage === 'products') {
+                categoryTitle.textContent = 'Select a Product Category';
+                this.renderProductCategories(categoryItems);
+            } else if (this.currentPage === 'services') {
+                categoryTitle.textContent = 'Select a Service Category';
+                this.renderServiceCategories(categoryItems);
+            }
+        },
+
+        renderProductCategories(container) {
+            container.innerHTML = '';
+            
+            const row = document.createElement('div');
+            row.className = 'row justify-content-center g-4';
+            
+            const categories = [
+                { key: 'decorative-paint', title: 'Decorative Paint', desc: 'Premium decorative paints with special effects and finishes', icon: 'fas fa-magic' },
+                { key: 'plastic-paint', title: 'Plastic Paint', desc: 'High-quality plastic emulsion paints for interior walls', icon: 'fas fa-paint-roller' },
+                { key: 'latex-paint', title: 'Latex Paint', desc: 'Superior latex formulations with excellent durability', icon: 'fas fa-brush' },
+                { key: 'acrylic-paint', title: 'Acrylic Paint', desc: 'Premium acrylic paints for versatile applications', icon: 'fas fa-palette' },
+                { key: 'exterior-paint', title: 'Exterior Paint', desc: 'Weather-resistant exterior coatings and stone finishes', icon: 'fas fa-building' },
+                { key: 'exterior-regular', title: 'Exterior Regular Paint', desc: 'Standard exterior paints for general applications', icon: 'fas fa-home' },
+                { key: 'floor-paint', title: 'Floor Paint', desc: 'Durable floor coatings for industrial and commercial use', icon: 'fas fa-square' },
+                { key: 'car-paint', title: 'Car Paint', desc: 'Professional automotive paint systems and finishes', icon: 'fas fa-car' }
+            ];
+
+            categories.forEach(category => {
+                const col = document.createElement('div');
+                col.className = 'col-lg-4 col-md-6 mb-4';
+                col.innerHTML = `
+                    <div class="category-item-card category-selection-card" data-category="${category.key}">
+                        <div class="category-item-image">
+                            <img src="public/images/interior_paint.jpg" alt="${category.title}" class="img-fluid" loading="lazy">
+                            <div class="category-item-overlay">
+                                <i class="${category.icon}"></i>
+                            </div>
+                        </div>
+                        <h6 class="category-item-title">${category.title}</h6>
+                        <p class="category-item-desc">${category.desc}</p>
+                    </div>
+                `;
+                
+                col.addEventListener('click', () => {
+                    this.showCategoryGrid(category.key);
+                });
+                
+                row.appendChild(col);
+            });
+            
+            container.appendChild(row);
+        },
+
+        renderServiceCategories(container) {
+            container.innerHTML = '';
+            
+            const row = document.createElement('div');
+            row.className = 'row justify-content-center g-4';
+            
+            const colorChartCol = document.createElement('div');
+            colorChartCol.className = 'col-lg-4 col-md-6 mb-4';
+            colorChartCol.innerHTML = `
+                <div class="category-item-card category-selection-card" data-category="color-chart">
+                    <div class="category-item-image">
+                        <img src="public/images/interior_paint.jpg" alt="Color Chart" class="img-fluid" loading="lazy">
+                        <div class="category-item-overlay">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <h6 class="category-item-title">Color Chart</h6>
+                    <p class="category-item-desc">Comprehensive color selection and professional consultation services</p>
+                </div>
+            `;
+            
+            colorChartCol.addEventListener('click', () => {
+                this.showCategoryGrid('color-chart');
+            });
+            
+            row.appendChild(colorChartCol);
+            container.appendChild(row);
+        },
+
+        showCategoryGrid(category) {
+            this.currentCategory = category;
+            
+            const gridView = document.getElementById('categoryGridView');
+            const detailView = document.getElementById('productDetailView') || document.getElementById('serviceDetailView');
+            const categoryTitle = document.getElementById('categoryTitle');
+            const categoryItems = document.getElementById('categoryItems');
+
+            if (!gridView || !categoryItems) return;
+
+            gridView.style.display = 'block';
+            if (detailView) detailView.style.display = 'none';
+
+            const data = this.currentPage === 'products' ? dataManager.products : dataManager.services;
+            const categoryData = data[category];
+            
+            if (categoryData) {
+                categoryTitle.textContent = categoryData.title;
+                this.renderCategoryItems(categoryData.items, categoryItems, category);
+            }
+        },
+
+        renderCategoryItems(items, container, category) {
+            container.innerHTML = '';
+            
+            const row = document.createElement('div');
+            row.className = 'row justify-content-start g-4';
+            
+            Object.keys(items).forEach(itemKey => {
+                const item = items[itemKey];
+                const col = document.createElement('div');
+                
+                const itemCount = Object.keys(items).length;
+                let colClass = 'col-lg-3 col-md-4 col-sm-6 col-6';
+                
+                if (itemCount === 1) {
+                    colClass = 'col-12 col-md-6 col-lg-4';
+                } else if (itemCount === 2) {
+                    colClass = 'col-12 col-sm-6 col-lg-6';
+                } else if (itemCount === 3) {
+                    colClass = 'col-12 col-md-6 col-lg-4';
+                } else if (itemCount === 4) {
+                    colClass = 'col-12 col-sm-6 col-lg-3';
+                }
+                
+                col.className = colClass;
+                col.innerHTML = `
+                    <div class="category-item-card h-100" data-category="${category}" data-item="${itemKey}">
+                        <div class="category-item-image">
+                            <img src="${item.image}" alt="${item.name}" class="img-fluid" loading="lazy">
+                            <div class="category-item-overlay">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                        <h6 class="category-item-title">${item.name}</h6>
+                    </div>
+                `;
+                
+                col.addEventListener('click', () => {
+                    this.showItemDetail(category, itemKey);
+                });
+                
+                row.appendChild(col);
+            });
+            
+            container.appendChild(row);
+        },
+
+        showItemDetail(category, itemKey) {
+            this.currentItem = itemKey;
+            
+            const gridView = document.getElementById('categoryGridView');
+            const detailView = document.getElementById('productDetailView') || document.getElementById('serviceDetailView');
+            
+            if (!detailView) return;
+
+            gridView.style.display = 'none';
+            detailView.style.display = 'block';
+
+            const data = this.currentPage === 'products' ? dataManager.products : dataManager.services;
+            const categoryData = data[category];
+            const itemData = categoryData.items[itemKey];
+
+            this.renderItemDetail(categoryData, itemData, category);
+        },
+
+        renderItemDetail(categoryData, itemData, category) {
+            const detailTitle = document.getElementById('detailTitle');
+            const detailImage = document.getElementById('detailImage');
+            const sidebarTitle = document.getElementById('sidebarTitle');
+            const sidebarItems = document.getElementById('sidebarItems');
+            const featuresContainer = document.getElementById(this.currentPage === 'products' ? 'productFeatures' : 'serviceFeatures');
+            const specsContainer = document.getElementById(this.currentPage === 'products' ? 'productSpecs' : 'serviceSpecs');
+
+            detailTitle.textContent = itemData.name;
+            detailImage.src = itemData.image_details || itemData.image;
+            detailImage.alt = itemData.name;
+            detailImage.loading = 'lazy';
+            sidebarTitle.textContent = categoryData.title;
+
+            featuresContainer.innerHTML = '';
+            itemData.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check text-success me-2"></i>${feature}`;
+                featuresContainer.appendChild(li);
+            });
+
+            specsContainer.innerHTML = '';
+            itemData.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-info-circle text-primary me-2"></i>${spec}`;
+                specsContainer.appendChild(li);
+            });
+
+            this.renderSidebar(categoryData.items, category);
+        },
+
+        renderSidebar(items, category) {
+            const sidebarItems = document.getElementById('sidebarItems');
+            sidebarItems.innerHTML = '';
+
+            Object.keys(items).forEach(itemKey => {
+                const item = items[itemKey];
+                const sidebarItem = document.createElement('div');
+                sidebarItem.className = `sidebar-item ${itemKey === this.currentItem ? 'active' : ''}`;
+                
+                sidebarItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="sidebar-item-image" loading="lazy">
+                    <span class="sidebar-item-name">${item.name}</span>
+                `;
+                
+                sidebarItem.addEventListener('click', () => {
+                    this.showItemDetail(category, itemKey);
+                });
+                
+                sidebarItems.appendChild(sidebarItem);
+            });
+        }
     };
+
+    // ===== CONTACT FORM HANDLING ===== //
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!firstName || !lastName || !email || !subject || !message) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success');
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+    }
+
+    // ===== STATISTICS COUNTER ANIMATION ===== //
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            if (target >= 1000000) {
+                element.textContent = (current / 1000000).toFixed(1) + 'M+';
+            } else if (target >= 1000) {
+                element.textContent = (current / 1000).toFixed(0) + 'K+';
+            } else {
+                element.textContent = Math.floor(current) + '+';
+            }
+        }, 16);
+    }
+    
+    if (statNumbers.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => observer.observe(stat));
+    }
+
+    // ===== NOTIFICATION SYSTEM ===== //
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `alert alert-${type === 'error' ? 'danger' : type} alert-dismissible fade show position-fixed`;
+        notification.style.cssText = `
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        `;
+        
+        notification.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 5000);
+    }
+
+    // ===== MOBILE MENU HANDLING ===== //
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navbarToggler && navbarCollapse) {
+        const regularNavLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
+        regularNavLinks.forEach(link => {
+            if (!link.classList.contains('dropdown-toggle')) {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                });
+            }
+        });
+
+        const dropdownItems = document.querySelectorAll('.dropdown-item:not(.dropdown-toggle)');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (!item.classList.contains('dropdown-toggle')) {
+                    setTimeout(() => {
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarToggler.click();
+                        }
+                    }, 150);
+                }
+            });
+        });
+        
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth < 992) {
+                    e.stopPropagation();
+                }
+            });
+        });
+    }
+
+    // ===== SCROLL ANIMATIONS ===== //
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .product-card, .service-card, .value-card, .team-card');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animate-in');
+            }
+        });
+    };
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        .feature-card, .product-card, .service-card, .value-card, .team-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll();
+
+    // ===== BACK TO TOP BUTTON ===== //
+    const backToTop = document.createElement('button');
+    backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    backToTop.className = 'back-to-top';
+    backToTop.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: var(--shadow-medium);
+    `;
+    
+    document.body.appendChild(backToTop);
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.style.opacity = '1';
+            backToTop.style.visibility = 'visible';
+        } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.visibility = 'hidden';
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
     // ===== INITIALIZE NAVIGATION MANAGER ===== //
     if (window.location.pathname.includes('products.html') || window.location.pathname.includes('services.html')) {
         navigationManager.init();
     }
 
-    console.log('=== SILKCOAT INITIALIZED SUCCESSFULLY ===');
+    console.log('Silkcoat Liberia website initialized successfully!');
 });
 
-console.log('=== SCRIPT END ===', new Date().toISOString());
+// ===== UTILITY FUNCTIONS ===== //
+function formatCurrency(amount) {
+    return new Intl.NumberFormat('en-LR', {
+        style: 'currency',
+        currency: 'LRD'
+    }).format(amount);
+}
+
+function formatPhoneNumber(phone) {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length === 10) {
+        return `+231 ${cleaned.slice(0, 3)} ${cleaned.slice(3, 6)} ${cleaned.slice(6)}`;
+    }
+    return phone;
+}
+
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction() {
+        const context = this;
+        const args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+function formatDate(date) {
+    return new Intl.DateTimeFormat('en-LR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }).format(new Date(date));
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showLoading(element) {
+    element.classList.add('loading');
+    element.disabled = true;
+}
+
+function hideLoading(element) {
+    element.classList.remove('loading');
+    element.disabled = false;
+}
+
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+function setUrlParameter(name, value) {
+    const url = new URL(window.location);
+    url.searchParams.set(name, value);
+    window.history.pushState({}, '', url);
+}
+
+function removeUrlParameter(name) {
+    const url = new URL(window.location);
+    url.searchParams.delete(name);
+    window.history.pushState({}, '', url);
+}
