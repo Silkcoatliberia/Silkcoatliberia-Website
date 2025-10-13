@@ -218,4 +218,4 @@ For updates or modifications, please contact the development team or submit deta
 ---
 
 **Silkcoat Liberia** - Premium Paint Solutions for Liberia
-*Powered by Turkish Excellence*
+*Designed by Dorbor Solutions*
