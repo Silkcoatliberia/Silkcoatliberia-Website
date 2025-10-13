@@ -1514,8 +1514,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== STATISTICS COUNTER ANIMATION ===== //
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-count'));
         const duration = 2000;
@@ -1529,10 +1527,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(timer);
             }
             
+            // Check if this is a percentage (ends with % in data-count or has % in original content)
+            const isPercentage = element.getAttribute('data-count').includes('%') || element.textContent.includes('%');
+            
             if (target >= 1000000) {
                 element.textContent = (current / 1000000).toFixed(1) + 'M+';
             } else if (target >= 1000) {
                 element.textContent = (current / 1000).toFixed(0) + 'K+';
+            } else if (isPercentage) {
+                element.textContent = Math.floor(current) + '%'; // Use % instead of +
             } else {
                 element.textContent = Math.floor(current) + '+';
             }
