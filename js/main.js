@@ -1,19 +1,84 @@
-// ===== SILKCOAT LIBERIA MAIN JAVASCRIPT ===== //
+// ===== SILKCOAT LIBERIA MAIN JAVASCRIPT - OPTIMIZED ===== //
+
+// ===== OPTIMIZED PRELOADER - LOADS ONLY FIRST IMAGE ===== //
+(function() {
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+
+    let firstImageLoaded = false;
+    let minTimeElapsed = false;
+
+    function hidePreloader() {
+        if (firstImageLoaded && minTimeElapsed) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    }
+
+    // ONLY load the first hero image and logo - rest load in background
+    const criticalImages = [
+        'public/images/silkcoat_logo.png',
+        'public/images/marm.png'  // Only first slide
+    ];
+
+    let loadedCount = 0;
+    const totalImages = criticalImages.length;
+
+    function preloadImage(src) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+                loadedCount++;
+                resolve();
+            };
+            img.onerror = () => {
+                loadedCount++;
+                resolve(); // Still resolve to not block
+            };
+            img.src = src;
+        });
+    }
+
+    // Load critical images
+    Promise.all(criticalImages.map(preloadImage))
+        .then(() => {
+            firstImageLoaded = true;
+            hidePreloader();
+        });
+
+    // Minimum display time (reduced to 1s for faster feel)
+    setTimeout(() => {
+        minTimeElapsed = true;
+        hidePreloader();
+    }, 1000);
+
+    // Fallback after 3 seconds (reduced from 10s)
+    setTimeout(() => {
+        firstImageLoaded = true;
+        minTimeElapsed = true;
+        hidePreloader();
+    }, 3000);
+})();
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== PRELOADER ===== //
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 500);
-            }, 1000);
+    // ===== LAZY LOAD REMAINING HERO IMAGES IN BACKGROUND ===== //
+    const remainingHeroImages = [
+        'public/images/2travert.png',
+        'public/images/3pearly.png',
+        'public/images/4palace.png',
+        'public/images/6pearl.png'
+    ];
+    
+    // Load these AFTER page is visible
+    setTimeout(() => {
+        remainingHeroImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
         });
-    }
+    }, 100);
 
     // ===== HERO SLIDESHOW ===== //
     const slides = document.querySelectorAll('.slide');
@@ -96,28 +161,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== FIX FOR MOBILE DROPDOWN SUBMENUS ===== //
-    // Handle dropdown submenus on mobile
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
-    // Disable Bootstrap's default dropdown behavior for submenus on touch devices
     if (isTouchDevice) {
         document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element) {
             element.setAttribute('data-bs-toggle', '');
             element.removeAttribute('aria-expanded');
-            console.log('Disabled Bootstrap toggle on:', element.textContent.trim());
         });
     }
 
-    // Handle submenu clicks on touch devices OR mobile screens
-    // Handle submenu clicks on touch devices OR mobile screens
     document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
-            console.log('Submenu clicked:', this.textContent.trim());
-            console.log('isTouchDevice:', isTouchDevice, '| innerWidth < 992:', window.innerWidth < 992);
-            
-            // Apply on touch devices regardless of screen size
             if (isTouchDevice || window.innerWidth < 992) {
-                console.log('Preventing default and handling click');
                 e.preventDefault();
                 e.stopPropagation();
                 
@@ -125,18 +180,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const submenu = this.nextElementSibling;
                 const isOpen = parentSubmenu.classList.contains('show') && submenu.classList.contains('show');
                 
-                console.log('Is currently open:', isOpen);
-                console.log('Parent submenu:', parentSubmenu);
-                console.log('Submenu element:', submenu);
-                
-                // Close all other submenus first
                 document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
                     if (item !== parentSubmenu) {
                         item.classList.remove('show');
                         const otherMenu = item.querySelector('.dropdown-menu');
                         if (otherMenu) {
                             otherMenu.classList.remove('show');
-                            // Samsung fix: directly manipulate display
                             otherMenu.style.display = 'none';
                             otherMenu.style.opacity = '0';
                             otherMenu.style.visibility = 'hidden';
@@ -144,13 +193,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Toggle this submenu with Samsung-specific handling
                 if (isOpen) {
-                    console.log('Closing submenu - Samsung aggressive approach');
                     parentSubmenu.classList.remove('show');
                     if (submenu) {
                         submenu.classList.remove('show');
-                        // Direct CSS manipulation for Samsung
                         submenu.style.display = 'none';
                         submenu.style.opacity = '0';
                         submenu.style.visibility = 'hidden';
@@ -158,10 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         submenu.style.overflow = 'hidden';
                     }
                 } else {
-                    console.log('Opening submenu');
                     parentSubmenu.classList.add('show');
                     if (submenu) {
-                        // Reset styles and show
                         submenu.style.display = 'block';
                         submenu.style.opacity = '1';
                         submenu.style.visibility = 'visible';
@@ -170,32 +214,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         submenu.classList.add('show');
                     }
                 }
-                
-                console.log('After toggle - has show class:', parentSubmenu.classList.contains('show'));
-            } else {
-                console.log('NOT handling click - conditions not met');
             }
         });
     });
 
-    // Handle final dropdown item clicks (products/services links)
     document.querySelectorAll('.dropdown-menu .dropdown-item:not(.dropdown-toggle)').forEach(function(item) {
         item.addEventListener('click', function() {
-            console.log('Final item clicked:', this.textContent.trim());
-            
-            // Close all dropdowns on touch devices or mobile
             if (isTouchDevice || window.innerWidth < 992) {
-                console.log('Closing all dropdowns');
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     menu.classList.remove('show');
-                    // Force reflow for Samsung browsers
                     void menu.offsetWidth;
                 });
                 document.querySelectorAll('.dropdown-submenu.show').forEach(submenu => {
                     submenu.classList.remove('show');
                 });
                 
-                // Close navbar only on smaller screens
                 if (window.innerWidth < 992) {
                     setTimeout(function() {
                         const navbar = document.querySelector('.navbar-collapse');
@@ -234,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Premium Samples: 100ml designer specification containers'
                         ]
                     },
+                    // ADD REST OF YOUR PRODUCTS HERE - keeping full structure
                     'palace': {
                         name: 'Palace',
                         image: 'images/interior/decorative/Palace/silkcoat_palace.jpg',
@@ -828,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ]
                     }
                 }
-            },
+            }
         },
         services: {
             'color-chart': {
@@ -1162,7 +1196,6 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         bindEvents() {
-            // Dropdown navigation
             document.addEventListener('click', (e) => {
                 if (e.target.matches('.dropdown-item[data-category]')) {
                     e.preventDefault();
@@ -1176,7 +1209,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
 
-                // Footer links
                 if (e.target.matches('.footer-links a[data-category]')) {
                     e.preventDefault();
                     const category = e.target.getAttribute('data-category');
@@ -1189,7 +1221,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
 
-                // Back to category button
                 if (e.target.matches('#backToCategory') || e.target.closest('#backToCategory')) {
                     e.preventDefault();
                     this.showCategoryGrid(this.currentCategory);
@@ -1239,54 +1270,14 @@ document.addEventListener('DOMContentLoaded', function() {
             row.className = 'row justify-content-center g-4';
             
             const categories = [
-                {
-                    key: 'decorative-paint',
-                    title: 'Decorative Paint',
-                    desc: 'Premium decorative paints with special effects and finishes',
-                    icon: 'fas fa-magic'
-                },
-                {
-                    key: 'plastic-paint',
-                    title: 'Plastic Paint',
-                    desc: 'High-quality plastic emulsion paints for interior walls',
-                    icon: 'fas fa-paint-roller'
-                },
-                {
-                    key: 'latex-paint',
-                    title: 'Latex Paint',
-                    desc: 'Superior latex formulations with excellent durability',
-                    icon: 'fas fa-brush'
-                },
-                {
-                    key: 'acrylic-paint',
-                    title: 'Acrylic Paint',
-                    desc: 'Premium acrylic paints for versatile applications',
-                    icon: 'fas fa-palette'
-                },
-                {
-                    key: 'exterior-paint',
-                    title: 'Exterior Paint',
-                    desc: 'Weather-resistant exterior coatings and stone finishes',
-                    icon: 'fas fa-building'
-                },
-                {
-                    key: 'exterior-regular',
-                    title: 'Exterior Regular Paint',
-                    desc: 'Standard exterior paints for general applications',
-                    icon: 'fas fa-home'
-                },
-                {
-                    key: 'floor-paint',
-                    title: 'Floor Paint',
-                    desc: 'Durable floor coatings for industrial and commercial use',
-                    icon: 'fas fa-square'
-                },
-                {
-                    key: 'car-paint',
-                    title: 'Car Paint',
-                    desc: 'Professional automotive paint systems and finishes',
-                    icon: 'fas fa-car'
-                }
+                { key: 'decorative-paint', title: 'Decorative Paint', desc: 'Premium decorative paints with special effects and finishes', icon: 'fas fa-magic' },
+                { key: 'plastic-paint', title: 'Plastic Paint', desc: 'High-quality plastic emulsion paints for interior walls', icon: 'fas fa-paint-roller' },
+                { key: 'latex-paint', title: 'Latex Paint', desc: 'Superior latex formulations with excellent durability', icon: 'fas fa-brush' },
+                { key: 'acrylic-paint', title: 'Acrylic Paint', desc: 'Premium acrylic paints for versatile applications', icon: 'fas fa-palette' },
+                { key: 'exterior-paint', title: 'Exterior Paint', desc: 'Weather-resistant exterior coatings and stone finishes', icon: 'fas fa-building' },
+                { key: 'exterior-regular', title: 'Exterior Regular Paint', desc: 'Standard exterior paints for general applications', icon: 'fas fa-home' },
+                { key: 'floor-paint', title: 'Floor Paint', desc: 'Durable floor coatings for industrial and commercial use', icon: 'fas fa-square' },
+                { key: 'car-paint', title: 'Car Paint', desc: 'Professional automotive paint systems and finishes', icon: 'fas fa-car' }
             ];
 
             categories.forEach(category => {
@@ -1295,7 +1286,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 col.innerHTML = `
                     <div class="category-item-card category-selection-card" data-category="${category.key}">
                         <div class="category-item-image">
-                            <img src="public/images/interior_paint.jpg" alt="${category.title}" class="img-fluid">
+                            <img src="public/images/interior_paint.jpg" alt="${category.title}" class="img-fluid" loading="lazy">
                             <div class="category-item-overlay">
                                 <i class="${category.icon}"></i>
                             </div>
@@ -1326,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             colorChartCol.innerHTML = `
                 <div class="category-item-card category-selection-card" data-category="color-chart">
                     <div class="category-item-image">
-                        <img src="public/images/interior_paint.jpg" alt="Color Chart" class="img-fluid">
+                        <img src="public/images/interior_paint.jpg" alt="Color Chart" class="img-fluid" loading="lazy">
                         <div class="category-item-overlay">
                             <i class="fas fa-palette"></i>
                         </div>
@@ -1367,15 +1358,6 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         renderCategoryItems(items, container, category) {
-            console.log('=== RENDER CATEGORY ITEMS DEBUG ===');
-            console.log('Category:', category);
-            console.log('Items count:', Object.keys(items).length);
-            console.log('Items keys:', Object.keys(items));
-            console.log('Container:', container);
-            console.log('==============================');
-
-            console.log('Items data:', items); // Check if data structure is the same
-
             container.innerHTML = '';
             
             const row = document.createElement('div');
@@ -1386,24 +1368,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const col = document.createElement('div');
                 
                 const itemCount = Object.keys(items).length;
-                let colClass = 'col-lg-3 col-md-4 col-sm-6 col-6'; // Default for 5+ items
+                let colClass = 'col-lg-3 col-md-4 col-sm-6 col-6';
                 
                 if (itemCount === 1) {
-                    colClass = 'col-12 col-md-6 col-lg-4'; // Centered appearance but left-aligned
+                    colClass = 'col-12 col-md-6 col-lg-4';
                 } else if (itemCount === 2) {
-                    colClass = 'col-12 col-sm-6 col-lg-6'; // Two equal columns
+                    colClass = 'col-12 col-sm-6 col-lg-6';
                 } else if (itemCount === 3) {
-                    colClass = 'col-12 col-md-6 col-lg-4'; // Three equal columns
+                    colClass = 'col-12 col-md-6 col-lg-4';
                 } else if (itemCount === 4) {
-                    colClass = 'col-12 col-sm-6 col-lg-3'; // Four equal columns - FIXED!
+                    colClass = 'col-12 col-sm-6 col-lg-3';
                 }
-                // 5+ items use the default
                 
                 col.className = colClass;
                 col.innerHTML = `
                     <div class="category-item-card h-100" data-category="${category}" data-item="${itemKey}">
                         <div class="category-item-image">
-                            <img src="${item.image}" alt="${item.name}" class="img-fluid">
+                            <img src="${item.image}" alt="${item.name}" class="img-fluid" loading="lazy">
                             <div class="category-item-overlay">
                                 <i class="fas fa-eye"></i>
                             </div>
@@ -1451,6 +1432,7 @@ document.addEventListener('DOMContentLoaded', function() {
             detailTitle.textContent = itemData.name;
             detailImage.src = itemData.image_details || itemData.image;
             detailImage.alt = itemData.name;
+            detailImage.loading = 'lazy';
             sidebarTitle.textContent = categoryData.title;
 
             featuresContainer.innerHTML = '';
@@ -1480,7 +1462,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sidebarItem.className = `sidebar-item ${itemKey === this.currentItem ? 'active' : ''}`;
                 
                 sidebarItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="sidebar-item-image">
+                    <img src="${item.image}" alt="${item.name}" class="sidebar-item-image" loading="lazy">
                     <span class="sidebar-item-name">${item.name}</span>
                 `;
                 
@@ -1499,27 +1481,23 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const firstName = document.getElementById('firstName').value;
             const lastName = document.getElementById('lastName').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Basic validation
             if (!firstName || !lastName || !email || !subject || !message) {
                 showNotification('Please fill in all required fields.', 'error');
                 return;
             }
             
-            // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showNotification('Please enter a valid email address.', 'error');
                 return;
             }
             
-            // Simulate form submission
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
@@ -1536,12 +1514,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== STATISTICS COUNTER ANIMATION ===== //
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60fps
+        const duration = 2000;
+        const increment = target / (duration / 16);
         let current = 0;
         
         const timer = setInterval(() => {
@@ -1551,17 +1527,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(timer);
             }
             
+            // Check if this is a percentage (ends with % in data-count or has % in original content)
+            const isPercentage = element.getAttribute('data-count').includes('%') || element.textContent.includes('%');
+            
             if (target >= 1000000) {
                 element.textContent = (current / 1000000).toFixed(1) + 'M+';
             } else if (target >= 1000) {
                 element.textContent = (current / 1000).toFixed(0) + 'K+';
+            } else if (isPercentage) {
+                element.textContent = Math.floor(current) + '%'; // Use % instead of +
             } else {
                 element.textContent = Math.floor(current) + '+';
             }
         }, 16);
     }
     
-    // Intersection Observer for counter animation
     if (statNumbers.length > 0) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1606,7 +1586,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
     if (navbarToggler && navbarCollapse) {
-        // Close mobile menu when clicking regular nav links (not dropdown toggles or items)
         const regularNavLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
         regularNavLinks.forEach(link => {
             if (!link.classList.contains('dropdown-toggle')) {
@@ -1618,11 +1597,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Handle dropdown items - close menu only when clicking actual product/service links
         const dropdownItems = document.querySelectorAll('.dropdown-item:not(.dropdown-toggle)');
         dropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Only close if it's a final link, not a submenu toggle
                 if (!item.classList.contains('dropdown-toggle')) {
                     setTimeout(() => {
                         if (navbarCollapse.classList.contains('show')) {
@@ -1633,11 +1610,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Prevent navbar collapse when clicking dropdown toggles on mobile
         document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth < 992) {
-                    e.stopPropagation(); // Prevent event from reaching navbar collapse handler
+                    e.stopPropagation();
                 }
             });
         });
@@ -1657,7 +1633,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Add CSS for animation
     const style = document.createElement('style');
     style.textContent = `
         .feature-card, .product-card, .service-card, .value-card, .team-card {
@@ -1674,7 +1649,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
     
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
+    animateOnScroll();
 
     // ===== BACK TO TOP BUTTON ===== //
     const backToTop = document.createElement('button');
@@ -1758,7 +1733,6 @@ function debounce(func, wait, immediate) {
     };
 }
 
-// Smooth scroll to element
 function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -1769,7 +1743,6 @@ function scrollToElement(elementId) {
     }
 }
 
-// Format date for local display
 function formatDate(date) {
     return new Intl.DateTimeFormat('en-LR', {
         year: 'numeric',
@@ -1778,38 +1751,32 @@ function formatDate(date) {
     }).format(new Date(date));
 }
 
-// Validate email format
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Show loading state
 function showLoading(element) {
     element.classList.add('loading');
     element.disabled = true;
 }
 
-// Hide loading state
 function hideLoading(element) {
     element.classList.remove('loading');
     element.disabled = false;
 }
 
-// Get URL parameters
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
-// Set URL parameter without refresh
 function setUrlParameter(name, value) {
     const url = new URL(window.location);
     url.searchParams.set(name, value);
     window.history.pushState({}, '', url);
 }
 
-// Remove URL parameter without refresh
 function removeUrlParameter(name) {
     const url = new URL(window.location);
     url.searchParams.delete(name);
