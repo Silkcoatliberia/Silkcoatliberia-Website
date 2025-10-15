@@ -3,19 +3,25 @@ const newsData = [
     {
         id: 1,
         title: "Historic Certification Ceremony Celebrates New Generation of Paint Professionals",
-        excerpt: "Silkcoat Liberia CEO and government officials honor newly certified painters at grand ceremony, marking successful completion of intensive Turkish-led training program that sets new standards for Liberia's construction industry.",
-        category: "Company News",
-        date: "2025-01-23",
+        excerpt: "Silkcoat Liberia CEO Miss Helena Smith and government officials honor newly certified painters at grand ceremony, marking successful completion of intensive Turkish-led training program that sets new standards for Liberia's construction industry.",
+        category: "Certification Ceremony",
+        date: "2024-10-04",
         images: [
-            "images/news/news4/final_day.jpg",
-            "public/images/4palace.png",
-            "public/images/2travert.png"
+            "images/news/news5/day5_1.jpeg",
+            "images/news/news5/day5_2.jpeg",
+            "images/news/news5/day5_3.jpeg",
+            "images/news/news5/day5_4.jpeg", 
+            "images/news/news5/day5_5.jpeg",
+            "images/news/news5/day5_6.jpeg",
+            "images/news/news5/day5_7.jpeg",
+            "images/news/news5/day5_8.jpeg",
+            "images/news/news5/day5_9.jpeg"
         ],
         content: `
-            <p>In a landmark event for Liberia's construction sector, Silkcoat Liberia hosted a prestigious certification ceremony celebrating the successful completion of its intensive four-day professional training program. The ceremony, attended by government officials and industry leaders, recognized a new generation of internationally certified paint application professionals.</p>
+            <p>In a landmark event for Liberia's construction sector, Silkcoat Liberia hosted a prestigious certification ceremony on October 4th, celebrating the successful completion of its intensive five-day professional training program. The ceremony, attended by government officials and industry leaders, recognized a new generation of internationally certified paint application professionals.</p>
             
             <h4>Expert-Led Training Program</h4>
-            <p>The comprehensive training program features:</p>
+            <p>The comprehensive five-day training program featured:</p>
             <ul>
                 <li>Hands-on technical training led by certified Turkish paint application specialists</li>
                 <li>Advanced surface preparation techniques for Liberia's tropical climate</li>
@@ -25,34 +31,104 @@ const newsData = [
             </ul>
             
             <h4>Building Local Expertise</h4>
-            <p>The workshop brings together Silkcoat's dedicated staff members and experienced local painters from across Monrovia. This knowledge transfer initiative aims to create a network of certified professionals who can deliver world-class paint application services throughout Liberia.</p>
+            <p>The workshop brought together Silkcoat's dedicated staff members and experienced local painters from across Monrovia. This knowledge transfer initiative aims to create a network of certified professionals who can deliver world-class paint application services throughout Liberia.</p>
             
-            <p>"We're investing in people, not just products," explains the Training Director from Turkey. "By sharing our 40 years of paint manufacturing and application expertise, we're helping build Liberia's capacity for excellence in the construction sector."</p>
+            <p>"We're investing in people, not just products," explained CEO Miss Helena Smith during her address. "By sharing our expertise and international standards, we're helping build Liberia's capacity for excellence in the construction sector and creating opportunities for professional growth."</p>
             
-            <h4>Comprehensive Curriculum</h4>
-            <p>The three-day intensive program covers multiple critical areas:</p>
+            <h4>Comprehensive Five-Day Curriculum</h4>
+            <p>The intensive program covered multiple critical areas:</p>
             <ul>
-                <li>Day 1: Surface analysis, preparation techniques, and primer application</li>
-                <li>Day 2: Advanced application methods for decorative and specialty paints</li>
-                <li>Day 3: Problem-solving, quality control, and customer consultation skills</li>
-                <li>Day 4: Practical assessment and certification ceremony</li>
+                <li>Day 1 (September 30): Surface analysis, preparation techniques, and primer application fundamentals</li>
+                <li>Day 2 (October 1): Advanced application methods for decorative and specialty paints</li>
+                <li>Day 3 (October 2): Problem-solving, quality control, and troubleshooting techniques</li>
+                <li>Day 4 (October 3): Customer consultation skills and professional business practices</li>
+                <li>Day 5 (October 4): Practical assessment and certification ceremony</li>
             </ul>
             
             <h4>Impact on Local Industry</h4>
-            <p>This training initiative is expected to significantly impact Liberia's painting industry by establishing standardized quality benchmarks and professional practices. Participants will receive internationally recognized certification upon successful completion of the program.</p>
+            <p>This training initiative is expected to significantly impact Liberia's painting industry by establishing standardized quality benchmarks and professional practices. Participants received internationally recognized certification upon successful completion of the rigorous program.</p>
             
-            <p>The workshop emphasizes practical, hands-on learning with real-world applications specific to Liberian building materials and environmental conditions. Participants are gaining skills that will immediately enhance their professional capabilities and career prospects.</p>
+            <p>The workshop emphasized practical, hands-on learning with real-world applications specific to Liberian building materials and environmental conditions. Participants gained skills that will immediately enhance their professional capabilities and career prospects.</p>
+            
+            <h4>Ceremony Highlights</h4>
+            <p>The certification ceremony featured addresses from Miss Helena Smith, CEO of Silkcoat Liberia, and distinguished government officials, recognizing the importance of professional skill development in Liberia's economic growth and construction sector advancement.</p>
+            
+            <p>Each certified participant received an official certificate, professional toolkit, and ongoing support resources to help them continue their professional development journey.</p>
             
             <h4>Looking Forward</h4>
             <p>Silkcoat Liberia plans to make this training program an annual event, continuously updating local professionals with the latest techniques, products, and industry best practices. This commitment to ongoing education demonstrates the company's long-term investment in Liberia's development.</p>
+            
+            <p>"This is just the beginning," Miss Helena Smith concluded. "We're committed to supporting these certified professionals as they grow their businesses and raise the standards of painting services across Liberia."</p>
         `
     },
     {
         id: 2,
-        title: "Advanced Problem-Solving Workshop Concludes Third Day of Training",
-        excerpt: "Silkcoat training participants master quality control techniques and professional troubleshooting methods as the intensive workshop prepares them for certification on the final day.",
+        title: "Professional Standards Workshop Concludes Fourth Day of Training",
+        excerpt: "Day four of Silkcoat training focuses on customer consultation, business ethics, and professional practices as participants prepare for final certification on October 4th.",
         category: "Training & Development",
-        date: "2025-01-22",
+        date: "2024-10-03",
+        images: [
+            "images/news/news4/day4.jpg"
+        ],
+        content: `
+            <p>As the fourth day of Silkcoat Liberia's intensive training workshop concluded on October 3rd, participants demonstrated remarkable growth in their professional skills and business acumen. Turkish experts led comprehensive sessions focused on customer service, professional standards, and business practices that will distinguish certified Silkcoat professionals in the marketplace.</p>
+            
+            <h4>Professional Standards and Ethics</h4>
+            <p>Today's advanced training covered critical professional development areas:</p>
+            <ul>
+                <li>Effective customer communication and expectation management</li>
+                <li>Accurate project estimation and transparent pricing strategies</li>
+                <li>Professional conduct and business ethics in the painting industry</li>
+                <li>Building long-term customer relationships through quality service</li>
+                <li>Portfolio development and business marketing strategies</li>
+            </ul>
+            
+            <h4>Customer Consultation Skills</h4>
+            <p>A significant portion of today's program focused on mastering customer interactions. Participants engaged in practical exercises including:</p>
+            <ul>
+                <li>Color consultation and recommendation techniques</li>
+                <li>Understanding customer needs and translating vision into reality</li>
+                <li>Presenting product options and explaining benefits clearly</li>
+                <li>Managing project timelines and customer expectations</li>
+                <li>Handling concerns and providing professional solutions</li>
+            </ul>
+            
+            <h4>Business Development Training</h4>
+            <p>The afternoon session covered essential business skills for painting professionals:</p>
+            <ul>
+                <li>Pricing strategies for different types of painting projects</li>
+                <li>Material calculation and cost estimation methods</li>
+                <li>Creating professional quotes and proposals</li>
+                <li>Time management and project scheduling</li>
+                <li>Growing and managing a painting business successfully</li>
+            </ul>
+            
+            <h4>Quality Assurance and Guarantees</h4>
+            <p>Participants learned about professional liability and quality standards:</p>
+            <ul>
+                <li>Setting quality benchmarks for different project types</li>
+                <li>Warranty and guarantee protocols for painted surfaces</li>
+                <li>Documentation and record-keeping best practices</li>
+                <li>Follow-up services and customer satisfaction assurance</li>
+            </ul>
+            
+            <h4>Participant Reflections</h4>
+            <p>Participants expressed enthusiasm about the comprehensive nature of the training program. One local painter noted, "These four days have completely transformed my understanding of professional painting. It's not just about applying paint anymore – it's about providing complete professional service and building a sustainable business."</p>
+            
+            <p>A Silkcoat staff member added, "The customer service training today was invaluable. We now have the confidence and knowledge to guide customers through their entire paint selection and application journey."</p>
+            
+            <h4>Preparation for Certification</h4>
+            <p>As the training sessions concluded, participants received information about tomorrow's certification process. The final day will include practical assessments and the official certification ceremony where participants will receive their certificates and be recognized for their achievement.</p>
+            
+            <p>The certification ceremony on October 4th will feature addresses from Silkcoat Liberia's CEO Miss Helena Smith and distinguished guests, marking the successful completion of this groundbreaking professional development initiative.</p>
+        `
+    },
+    {
+        id: 3,
+        title: "Advanced Problem-Solving Workshop Highlights Day Three of Training",
+        excerpt: "Silkcoat training participants master quality control techniques and professional troubleshooting methods during the third day of intensive workshop.",
+        category: "Training & Development",
+        date: "2024-10-02",
         images: [
             "images/news/news3/day3_1.png",
             "images/news/news3/day3_2.png",
@@ -61,74 +137,65 @@ const newsData = [
             "images/news/news3/day3_5.png"
         ],
         content: `
-            <p>As the third day of Silkcoat Liberia's intensive training workshop concluded, participants demonstrated remarkable growth in their technical expertise and problem-solving capabilities. Turkish experts led comprehensive sessions focused on quality assurance, troubleshooting, and professional standards that will distinguish certified Silkcoat professionals in the marketplace.</p>
+            <p>The third day of Silkcoat Liberia's intensive training workshop on October 2nd focused on advanced problem-solving and quality control. Turkish experts led comprehensive sessions designed to equip participants with the skills needed to diagnose and resolve common painting challenges specific to Liberia's tropical environment.</p>
             
             <h4>Mastering Quality Control</h4>
-            <p>Today's advanced training covered critical quality management areas:</p>
+            <p>Today's training covered critical quality management areas:</p>
             <ul>
                 <li>Surface inspection and assessment protocols before application</li>
                 <li>Paint consistency testing and adjustment techniques</li>
                 <li>Application quality checkpoints and verification methods</li>
-                <li>Final inspection criteria and customer approval processes</li>
-                <li>Documentation and warranty compliance procedures</li>
+                <li>Final inspection criteria and standards</li>
+                <li>Documentation and quality assurance procedures</li>
             </ul>
             
             <h4>Real-World Problem Solving</h4>
-            <p>Participants engaged in intensive troubleshooting exercises addressing common challenges encountered in Liberia's construction environment. Turkish trainer Ayşe Demir presented real case studies from various climates and building types, challenging participants to diagnose issues and propose solutions.</p>
+            <p>Participants engaged in intensive troubleshooting exercises addressing common challenges encountered in Liberia's construction environment. Training experts presented practical case studies from various climates and building types, challenging participants to diagnose issues and propose effective solutions.</p>
             
             <h5>Critical Issues Addressed:</h5>
             <ul>
                 <li>Dealing with moisture-related paint failures in tropical climates</li>
-                <li>Correcting surface preparation deficiencies after project commencement</li>
-                <li>Managing color consistency across large projects</li>
-                <li>Addressing customer concerns about finish quality and durability</li>
+                <li>Correcting surface preparation deficiencies during projects</li>
+                <li>Managing color consistency across large applications</li>
+                <li>Addressing finish quality concerns professionally</li>
                 <li>Remediation strategies for previously failed paint applications</li>
             </ul>
             
-            <h4>Professional Standards and Ethics</h4>
-            <p>A significant portion of today's program emphasized professional conduct and business ethics. Participants learned about:</p>
+            <h4>Climate-Specific Challenges</h4>
+            <p>A significant portion of training addressed Liberia's unique environmental conditions:</p>
             <ul>
-                <li>Accurate project estimation and transparent pricing</li>
-                <li>Setting realistic customer expectations and timelines</li>
-                <li>Proper product selection and honest recommendations</li>
-                <li>Building long-term customer relationships through excellence</li>
-                <li>Professional liability and quality guarantees</li>
+                <li>Managing humidity levels during paint application and curing</li>
+                <li>Temperature control strategies for optimal results</li>
+                <li>Mold and mildew prevention in high-moisture areas</li>
+                <li>UV protection and fade resistance in intense tropical sun</li>
+                <li>Seasonal considerations for exterior painting projects</li>
             </ul>
             
-            <h4>Customer Consultation Mastery</h4>
-            <p>The afternoon session featured role-playing exercises where participants practiced customer consultation scenarios. Turkish experts evaluated communication skills, technical knowledge presentation, and professional demeanor.</p>
+            <h4>Hands-On Practice Sessions</h4>
+            <p>The afternoon featured practical exercises where participants worked through common scenarios, applying learned troubleshooting techniques. Turkish trainers provided individualized feedback and guidance, ensuring each participant developed confidence in problem-solving abilities.</p>
             
-            <p>"Being technically excellent isn't enough," explained training coordinator Ibrahim Özkan. "Professionals must also communicate effectively with customers, understand their vision, and guide them to optimal solutions. Today's training developed these crucial soft skills."</p>
-            
-            <h4>Participant Progress Assessment</h4>
-            <p>Throughout the day, trainers conducted informal assessments to gauge participant readiness for tomorrow's certification evaluation. The response has been overwhelmingly positive, with participants demonstrating strong grasp of technical content and practical applications.</p>
-            
-            <p>John Karnga, a veteran painter with 20 years of experience, reflected on the training: "These three days have revolutionized my understanding of professional painting. I thought I knew everything, but the Turkish experts showed me there's always more to learn. I'm excited about tomorrow's certification."</p>
-            
-            <h4>Preparation for Certification Day</h4>
-            <p>Participants received comprehensive information about tomorrow's certification process, which will include:</p>
+            <h4>Tools and Equipment Training</h4>
+            <p>Participants also learned about:</p>
             <ul>
-                <li>Practical demonstration of learned techniques</li>
-                <li>Written assessment of technical knowledge</li>
-                <li>Quality control and problem-solving scenarios</li>
-                <li>Customer consultation role-play evaluation</li>
-                <li>Final certification ceremony with special guests</li>
+                <li>Proper selection and maintenance of painting tools</li>
+                <li>Equipment troubleshooting and repair basics</li>
+                <li>Safety equipment usage and maintenance</li>
+                <li>Modern application tools and technologies</li>
             </ul>
             
-            <h4>Building a Professional Community</h4>
-            <p>Beyond individual skill development, this training has fostered a sense of community among participants. Painters and Silkcoat staff who previously worked independently are now forming networks of mutual support and knowledge sharing.</p>
+            <h4>Building Professional Confidence</h4>
+            <p>Throughout the day, trainers emphasized building confidence through knowledge. Participants learned that understanding the "why" behind problems makes finding solutions more straightforward and helps prevent issues before they occur.</p>
             
-            <p>Tomorrow's certification ceremony will mark not just the end of formal training, but the beginning of an ongoing professional development journey for all participants. Silkcoat Liberia has committed to providing continuous support, advanced training opportunities, and a platform for certified professionals to grow their businesses.</p>
-            
-            <p>The ceremony will feature addresses from Silkcoat Liberia's CEO and distinguished government officials, recognizing the importance of professional skill development in Liberia's economic growth and construction sector advancement.</p>
+            <h4>Looking Ahead</h4>
+            <p>With three days of intensive technical training completed, tomorrow's session will shift focus to professional business practices, customer consultation, and service excellence. The comprehensive training ensures participants are not only technically proficient but also professionally equipped to succeed in the painting industry.</p>
         `
     },
     {
-        id: 3,
+        id: 4,
         title: "Day Two: Mastering Decorative Paint Techniques at Silkcoat Workshop",
         excerpt: "Turkish experts demonstrate advanced decorative painting techniques as Liberian professionals dive deep into the art of creating stunning textured finishes and specialty coatings during the second day of intensive training.",
         category: "Training & Development",
-        date: "2025-01-21",
+        date: "2024-10-01",
         images: [
             "images/news/news2/day2_1.jpeg",
             "images/news/news2/day2_2.jpeg",
@@ -136,7 +203,7 @@ const newsData = [
             "images/news/news2/day2_4.jpeg"
         ],
         content: `
-            <p>The second day of Silkcoat Liberia's professional training workshop showcased the artistic side of paint application, with Turkish master craftsmen demonstrating advanced decorative techniques that transform ordinary walls into stunning visual masterpieces.</p>
+            <p>The second day of Silkcoat Liberia's professional training workshop on October 1st showcased the artistic side of paint application, with Turkish master craftsmen demonstrating advanced decorative techniques that transform ordinary walls into stunning visual masterpieces.</p>
             
             <h4>Hands-On Decorative Training</h4>
             <p>Today's sessions focused on Silkcoat's premium decorative paint lines, with participants learning to create:</p>
@@ -149,9 +216,7 @@ const newsData = [
             </ul>
             
             <h4>Turkish Expertise in Action</h4>
-            <p>Master trainer Mehmet Yilmaz, with over 25 years of decorative painting experience, demonstrated intricate application techniques that had participants captivated. "These decorative finishes can transform any space from ordinary to extraordinary," Yilmaz explained while creating a stunning metallic accent wall.</p>
-            
-            <p>Participants worked in small groups, each practicing different techniques under the direct supervision of Turkish experts. The hands-on approach allowed for immediate feedback and skill refinement, with trainers providing personalized guidance to each participant.</p>
+            <p>Master trainers with extensive decorative painting experience demonstrated intricate application techniques that captivated participants. Working in small groups, each participant practiced different techniques under direct supervision, allowing for immediate feedback and skill refinement.</p>
             
             <h5>Special Climate Considerations</h5>
             <p>A significant portion of today's training addressed Liberia's tropical climate challenges:</p>
@@ -160,35 +225,45 @@ const newsData = [
                 <li>Temperature control for optimal drying and curing</li>
                 <li>Surface preparation specific to high-moisture environments</li>
                 <li>Long-term maintenance of decorative finishes in tropical conditions</li>
+                <li>Protective coatings and sealants for enhanced durability</li>
             </ul>
             
-            <h4>Participant Testimonials</h4>
-            <p>"I've been painting for 15 years, but today I learned techniques I never knew existed," shared Moses Karpeh, a local painting contractor. "The Turkish experts are incredibly patient and knowledgeable. This training is changing how I see my profession."</p>
+            <h4>Premium Product Applications</h4>
+            <p>Participants gained in-depth knowledge of Silkcoat's decorative paint collections:</p>
+            <ul>
+                <li>Understanding the unique properties of each decorative line</li>
+                <li>Proper mixing and application techniques for consistent results</li>
+                <li>Tool selection for different decorative effects</li>
+                <li>Layering techniques for complex finishes</li>
+                <li>Troubleshooting common decorative application challenges</li>
+            </ul>
             
-            <p>Sarah Jallah, a Silkcoat staff member, added: "Understanding these premium products at this depth gives us confidence to properly advise our customers. We're not just selling paint; we're offering complete decorative solutions."</p>
+            <h4>Participant Experience</h4>
+            <p>The hands-on nature of today's training allowed participants to immediately apply new skills. Local painters and Silkcoat staff members worked side-by-side, creating sample boards showcasing various decorative techniques they can later use to demonstrate capabilities to customers.</p>
             
             <h4>Practical Business Applications</h4>
             <p>Beyond technical skills, today's training included valuable business insights:</p>
             <ul>
                 <li>Pricing strategies for decorative painting projects</li>
-                <li>Customer consultation and expectation management</li>
+                <li>Customer consultation for decorative applications</li>
                 <li>Portfolio development for showcasing decorative work</li>
                 <li>Marketing specialized decorative services</li>
+                <li>Understanding customer preferences and design trends</li>
             </ul>
             
-            <h4>Tomorrow's Focus</h4>
-            <p>Day three will concentrate on problem-solving, quality control, and advanced troubleshooting techniques. Participants will learn to diagnose and correct common paint application issues while exploring innovative solutions for challenging projects.</p>
+            <h4>Skill Development Progress</h4>
+            <p>With two full days of training completed, participants have built a strong foundation in both fundamental and decorative painting techniques. The progression from basic surface preparation to advanced decorative applications demonstrates the comprehensive nature of the training program.</p>
             
-            <p>The momentum and enthusiasm continue to build as participants recognize the transformative impact this training will have on their professional capabilities and business opportunities.</p>
+            <h4>Tomorrow's Focus</h4>
+            <p>Day three will concentrate on problem-solving, quality control, and advanced troubleshooting techniques. Participants will learn to diagnose and correct common paint application issues while exploring innovative solutions for challenging projects in Liberia's unique climate.</p>
         `
     },
-    
     {
-        id: 4,
-        title: "Silkcoat Liberia Launches Intensive Professional Training Workshop",
-        excerpt: "Turkish paint experts arrive in Monrovia to conduct a comprehensive 3-day professional training program for Silkcoat staff and local painters, marking a new chapter in quality paint application standards in Liberia.",
+        id: 5,
+        title: "Silkcoat Liberia Launches Intensive Five-Day Professional Training Program",
+        excerpt: "Turkish paint experts arrive in Monrovia to conduct a comprehensive professional training program for Silkcoat staff and local painters, marking a new chapter in quality paint application standards in Liberia.",
         category: "Training & Development",
-        date: "2025-01-20",
+        date: "2024-09-30",
         images: [
             "images/news/news1/day1_1.png",
             "images/news/news1/day1_2.jpeg",
@@ -196,169 +271,55 @@ const newsData = [
             "images/news/news1/day1_4.jpeg"
         ],
         content: `
-            <p>Silkcoat Liberia has commenced an ambitious professional training initiative, bringing expert trainers from the parent company in Turkey to Monrovia. This groundbreaking workshop represents the company's commitment to elevating paint application standards and technical expertise in Liberia's construction industry.</p>
+            <p>Silkcoat Liberia commenced an ambitious professional training initiative on September 30th, bringing expert trainers from Turkey to Monrovia. This groundbreaking five-day workshop represents the company's commitment to elevating paint application standards and technical expertise in Liberia's construction industry.</p>
             
-            <h4>Expert-Led Training Program</h4>
-            <p>The comprehensive training program features:</p>
+            <h4>Comprehensive Training Program Launch</h4>
+            <p>The five-day intensive program features:</p>
             <ul>
                 <li>Hands-on technical training led by certified Turkish paint application specialists</li>
                 <li>Advanced surface preparation techniques for Liberia's tropical climate</li>
                 <li>Product knowledge sessions covering Silkcoat's entire paint range</li>
                 <li>Best practices in color consultation and customer service</li>
                 <li>Safety protocols and environmental compliance standards</li>
+                <li>Professional business practices and quality control methods</li>
+            </ul>
+            
+            <h4>Day One: Foundation and Fundamentals</h4>
+            <p>The opening day focused on essential surface preparation and primer application:</p>
+            <ul>
+                <li>Comprehensive surface analysis and assessment techniques</li>
+                <li>Proper cleaning and preparation methods for various surfaces</li>
+                <li>Understanding moisture content and its impact on paint adhesion</li>
+                <li>Primer selection and application for different substrates</li>
+                <li>Safety equipment usage and workplace safety protocols</li>
             </ul>
             
             <h4>Building Local Expertise</h4>
             <p>The workshop brings together Silkcoat's dedicated staff members and experienced local painters from across Monrovia. This knowledge transfer initiative aims to create a network of certified professionals who can deliver world-class paint application services throughout Liberia.</p>
             
-            <p>"We're investing in people, not just products," explains the Training Director from Turkey. "By sharing our 40 years of paint manufacturing and application expertise, we're helping build Liberia's capacity for excellence in the construction sector."</p>
+            <p>CEO Miss Helena Smith emphasized the program's importance: "We're investing in people, not just products. By bringing international expertise to Liberia and sharing our knowledge, we're helping build local capacity for excellence in the construction sector."</p>
             
-            <h4>Comprehensive Curriculum</h4>
-            <p>The three-day intensive program covers multiple critical areas:</p>
+            <h4>Training Methodology</h4>
+            <p>The workshop emphasizes practical, hands-on learning with real-world applications specific to Liberian building materials and environmental conditions. Participants work with actual surfaces and materials they'll encounter in their daily work, ensuring immediate practical application of learned skills.</p>
+            
+            <h4>Program Structure</h4>
+            <p>The five-day intensive curriculum includes:</p>
             <ul>
-                <li>Day 1: Surface analysis, preparation techniques, and primer application</li>
-                <li>Day 2: Advanced application methods for decorative and specialty paints</li>
-                <li>Day 3: Problem-solving, quality control, and customer consultation skills</li>
-                <li>Day 4: Practical assessment and certification ceremony</li>
+                <li>Day 1 (September 30): Surface analysis, preparation techniques, and primer application</li>
+                <li>Day 2 (October 1): Advanced application methods for decorative and specialty paints</li>
+                <li>Day 3 (October 2): Problem-solving, quality control, and troubleshooting</li>
+                <li>Day 4 (October 3): Customer consultation and professional business practices</li>
+                <li>Day 5 (October 4): Practical assessment and certification ceremony</li>
             </ul>
             
             <h4>Impact on Local Industry</h4>
             <p>This training initiative is expected to significantly impact Liberia's painting industry by establishing standardized quality benchmarks and professional practices. Participants will receive internationally recognized certification upon successful completion of the program.</p>
             
-            <p>The workshop emphasizes practical, hands-on learning with real-world applications specific to Liberian building materials and environmental conditions. Participants are gaining skills that will immediately enhance their professional capabilities and career prospects.</p>
+            <h4>Participant Enthusiasm</h4>
+            <p>The energy and engagement on day one demonstrated the high level of interest in professional development within Liberia's painting community. Participants expressed appreciation for the opportunity to learn from international experts and gain skills that will enhance their professional capabilities and career prospects.</p>
             
             <h4>Looking Forward</h4>
-            <p>Silkcoat Liberia plans to make this training program an annual event, continuously updating local professionals with the latest techniques, products, and industry best practices. This commitment to ongoing education demonstrates the company's long-term investment in Liberia's development.</p>
-        `
-    },
-    {
-        id: 5,
-        title: "Proper Surface Preparation: Key to Long-Lasting Paint Jobs",
-        excerpt: "Master the essential steps of surface preparation to ensure your paint projects deliver professional results that stand the test of time.",
-        category: "How-To Guide",
-        date: "2024-12-20",
-        images: [
-            "public/images/6pearl.png",
-            "public/images/marm.png"
-        ],
-        content: `
-            <p>The secret to a beautiful, long-lasting paint job isn't just in the paint itself – it's in the preparation. Our experts share essential surface preparation techniques for optimal results.</p>
-            
-            <h4>Why Preparation Matters</h4>
-            <p>Proper surface preparation ensures:</p>
-            <ul>
-                <li>Better paint adhesion and durability</li>
-                <li>Smoother, more professional finish</li>
-                <li>Longer-lasting results with less maintenance</li>
-                <li>Prevention of common paint problems like peeling and bubbling</li>
-            </ul>
-            
-            <h4>Step-by-Step Preparation Guide</h4>
-            
-            <h5>Step 1: Clean the Surface</h5>
-            <p>Remove all dirt, dust, grease, and mildew. In Liberia's humid climate, pay special attention to mold and mildew removal using appropriate cleaning solutions.</p>
-            
-            <h5>Step 2: Repair Damage</h5>
-            <p>Fill cracks, holes, and imperfections with quality filler. Sand smooth once dry. For exterior surfaces in tropical climates, use weatherproof fillers.</p>
-            
-            <h5>Step 3: Sand the Surface</h5>
-            <p>Sanding creates a slightly rough surface for better paint adhesion. Use appropriate grit sandpaper based on the surface condition.</p>
-            
-            <h5>Step 4: Prime as Needed</h5>
-            <p>Primer is essential for:</p>
-            <ul>
-                <li>New, unpainted surfaces</li>
-                <li>Dramatic color changes</li>
-                <li>Surfaces with stains or water damage</li>
-                <li>Porous materials like new plaster</li>
-            </ul>
-            
-            <h5>Step 5: Final Inspection</h5>
-            <p>Before painting, ensure the surface is completely dry, clean, and smooth. This final check prevents problems during application.</p>
-            
-            <h4>Climate Considerations</h4>
-            <p>In Liberia's tropical climate:</p>
-            <ul>
-                <li>Allow extra drying time between preparation steps</li>
-                <li>Avoid painting in direct sunlight or rain</li>
-                <li>Use mold-resistant primers in humid areas</li>
-                <li>Ensure surfaces are completely dry before priming or painting</li>
-            </ul>
-            
-            <h4>Professional Support</h4>
-            <p>For technical questions about surface preparation, contact our support team. We provide free consultation to ensure your project succeeds.</p>
-        `
-    },
-    {
-        id: 6,
-        title: "Eco-Friendly Painting: Silkcoat's Commitment to Sustainability",
-        excerpt: "Learn about our environmental initiatives and how choosing Silkcoat paints contributes to a healthier planet and cleaner indoor air quality.",
-        category: "Sustainability",
-        date: "2024-12-15",
-        images: [
-            "public/images/3pearly.png",
-            "public/images/4palace.png",
-            "images/Index/Excellence/excellence2.png"
-        ],
-        content: `
-            <p>At Silkcoat Liberia, we believe that premium quality and environmental responsibility go hand in hand. Discover our commitment to sustainable practices and eco-friendly products.</p>
-            
-            <h4>Our Environmental Commitments</h4>
-            
-            <h5>Low VOC Formulations</h5>
-            <p>All our interior paints feature low or zero VOC (Volatile Organic Compounds) content, ensuring:</p>
-            <ul>
-                <li>Healthier indoor air quality</li>
-                <li>Reduced environmental impact</li>
-                <li>Safer application for painters and residents</li>
-                <li>Minimal odor during and after application</li>
-            </ul>
-            
-            <h5>Sustainable Manufacturing</h5>
-            <p>Our production processes prioritize:</p>
-            <ul>
-                <li>Energy-efficient manufacturing methods</li>
-                <li>Waste reduction and recycling programs</li>
-                <li>Water conservation initiatives</li>
-                <li>Responsible sourcing of raw materials</li>
-            </ul>
-            
-            <h5>Packaging Innovations</h5>
-            <p>We're continuously improving our packaging to:</p>
-            <ul>
-                <li>Use recyclable materials wherever possible</li>
-                <li>Reduce plastic content in our containers</li>
-                <li>Minimize packaging waste</li>
-                <li>Encourage container recycling and reuse</li>
-            </ul>
-            
-            <h4>Benefits for Liberian Homes</h4>
-            <p>Choosing eco-friendly paints offers specific advantages in Liberia:</p>
-            <ul>
-                <li>Better indoor air quality in humid tropical conditions</li>
-                <li>Safer for families with children and elderly members</li>
-                <li>Reduced environmental impact on local ecosystems</li>
-                <li>Compliance with emerging environmental standards</li>
-            </ul>
-            
-            <h4>Certifications and Standards</h4>
-            <p>Our products meet or exceed:</p>
-            <ul>
-                <li>ISO 14001 Environmental Management Standards</li>
-                <li>International VOC emission regulations</li>
-                <li>Green building certification requirements</li>
-            </ul>
-            
-            <h4>Join Our Green Initiative</h4>
-            <p>We encourage customers to:</p>
-            <ul>
-                <li>Return empty paint containers for proper recycling</li>
-                <li>Calculate paint quantities accurately to minimize waste</li>
-                <li>Choose low-VOC options for interior projects</li>
-                <li>Support sustainable building practices</li>
-            </ul>
-            
-            <p>Together, we can create beautiful spaces while protecting Liberia's natural environment for future generations.</p>
+            <p>As the program continues through October 4th, participants will progress through increasingly advanced topics, culminating in a certification ceremony where they will be recognized as internationally certified paint application professionals. This marks the beginning of Silkcoat Liberia's ongoing commitment to professional development in Liberia's construction sector.</p>
         `
     }
 ];
