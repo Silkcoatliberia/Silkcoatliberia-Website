@@ -1555,8 +1555,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.textContent = (current / 1000000).toFixed(1) + 'M+';
             } else if (target >= 1000) {
                 element.textContent = (current / 1000).toFixed(0) + 'K+';
+            } else if (isPercentage) {
+            element.textContent = Math.floor(current) + '%';
+            } else if (hasPlus) {
+                element.textContent = Math.floor(current) + '+'; // Only add + if original had it
             } else {
-                element.textContent = Math.floor(current) + '+';
+                element.textContent = Math.floor(current); // No suffix for plain numbers
             }
         }, 16);
     }
