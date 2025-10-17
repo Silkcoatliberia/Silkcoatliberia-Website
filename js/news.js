@@ -53,7 +53,7 @@ const newsData = [
             <h4>Ceremony Highlights</h4>
             <p>The certification ceremony featured addresses from Miss Helena Smith, CEO of Silkcoat Liberia, and distinguished government officials, recognizing the importance of professional skill development in Liberia's economic growth and construction sector advancement.</p>
             
-            <p>Each certified participant received an official certificate, professional toolkit, and ongoing support resources to help them continue their professional development journey.</p>
+            <p>Each certified participant received an official certificate, and ongoing support resources to help them continue their professional development journey.</p>
             
             <h4>Looking Forward</h4>
             <p>Silkcoat Liberia plans to make this training program an annual event, continuously updating local professionals with the latest techniques, products, and industry best practices. This commitment to ongoing education demonstrates the company's long-term investment in Liberia's development.</p>
