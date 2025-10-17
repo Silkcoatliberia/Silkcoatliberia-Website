@@ -5,7 +5,7 @@ const newsData = [
         title: "Historic Certification Ceremony Celebrates New Generation of Paint Professionals",
         excerpt: "Silkcoat Liberia CEO Miss Helena Smith and government officials honor newly certified painters at grand ceremony, marking successful completion of intensive Turkish-led training program that sets new standards for Liberia's construction industry.",
         category: "Certification Ceremony",
-        date: "2024-10-04",
+        date: "2025-10-04",
         images: [
             "images/news/news5/day5_1.jpeg",
             "images/news/news5/day5_2.jpeg",
@@ -66,7 +66,7 @@ const newsData = [
         title: "Professional Standards Workshop Concludes Fourth Day of Training",
         excerpt: "Day four of Silkcoat training focuses on customer consultation, business ethics, and professional practices as participants prepare for final certification on October 4th.",
         category: "Training & Development",
-        date: "2024-10-03",
+        date: "2025-10-03",
         images: [
             "images/news/news4/day4.jpg"
         ],
@@ -128,7 +128,7 @@ const newsData = [
         title: "Advanced Problem-Solving Workshop Highlights Day Three of Training",
         excerpt: "Silkcoat training participants master quality control techniques and professional troubleshooting methods during the third day of intensive workshop.",
         category: "Training & Development",
-        date: "2024-10-02",
+        date: "2025-10-02",
         images: [
             "images/news/news3/day3_1.png",
             "images/news/news3/day3_2.png",
@@ -195,7 +195,7 @@ const newsData = [
         title: "Day Two: Mastering Decorative Paint Techniques at Silkcoat Workshop",
         excerpt: "Turkish experts demonstrate advanced decorative painting techniques as Liberian professionals dive deep into the art of creating stunning textured finishes and specialty coatings during the second day of intensive training.",
         category: "Training & Development",
-        date: "2024-10-01",
+        date: "2025-10-01",
         images: [
             "images/news/news2/day2_1.jpeg",
             "images/news/news2/day2_2.jpeg",
@@ -263,7 +263,7 @@ const newsData = [
         title: "Silkcoat Liberia Launches Intensive Five-Day Professional Training Program",
         excerpt: "Turkish paint experts arrive in Monrovia to conduct a comprehensive professional training program for Silkcoat staff and local painters, marking a new chapter in quality paint application standards in Liberia.",
         category: "Training & Development",
-        date: "2024-09-30",
+        date: "2025-09-30",
         images: [
             "images/news/news1/day1_1.png",
             "images/news/news1/day1_2.jpeg",
