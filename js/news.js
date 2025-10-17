@@ -68,7 +68,10 @@ const newsData = [
         category: "Training & Development",
         date: "2025-10-03",
         images: [
-            "images/news/news4/day4.jpg"
+            "images/news/news4/day4_1.png",
+            "images/news/news4/day4_2.png",
+            "images/news/news4/day4_3.png",
+            "images/news/news4/day4_4.jpeg"
         ],
         content: `
             <p>As the fourth day of Silkcoat Liberia's intensive training workshop concluded on October 3rd, participants demonstrated remarkable growth in their professional skills and business acumen. Turkish experts led comprehensive sessions focused on customer service, professional standards, and business practices that will distinguish certified Silkcoat professionals in the marketplace.</p>
